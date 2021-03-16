@@ -1,5 +1,5 @@
 /* React Imports */
-import React, { Component } from "react";
+import React from "react";
 
 import { Link } from "react-router-dom";
 
@@ -68,7 +68,6 @@ function RegularService() {
           <span style={{ color: "red" }}>»</span> Clean up of the bike
           <br /> <br /> <br />
         </div>
-        <div className="footer">
           <Link
             to="/BookDoorStep"
             style={{
@@ -77,7 +76,7 @@ function RegularService() {
             }}
           >
             <h1
-              className="book m-0"
+              className="text-white font-semibold p-1 -mx-3 rounded text-4xl bg-gray-900 m-0"
               style={{
                 fontWeight: "600",
                 fontSize: "1.5rem",
@@ -87,7 +86,6 @@ function RegularService() {
               BOOK SERVICE
             </h1>
           </Link>
-        </div>
       </div>
     </div>
   );

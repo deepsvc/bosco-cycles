@@ -3,12 +3,13 @@ import React, { Component } from "react";
 import SkyLight from "react-skylight";
 
 /* Local Imports */
-// import logo from "../../assets/images/Accenture-AWS-Group_Web_Color1.png";
+import logo from "../../assets/images/logo.png";
 import "./Navbar.css";
-import RegularService from "./../../components/BookServiceModal/RegularService/RegularService"
+import RegularService from "./../../components/BookServiceModal/RegularService/RegularService";
+import UltimateStrip from "./../../components/BookServiceModal/UltimateStrip/UltimateStrip";
+import PremiumService from "./../../components/BookServiceModal/PremiumService/PremiumService";
 
 /* Third Party Imports */
-import { Button, Modal } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import HamburgerMenu from "react-hamburger-menu";
 
@@ -18,8 +19,6 @@ class NavBar extends Component {
     this.state = {
       isOpen: false,
       setShowOptions: false,
-      setShow: false,
-      showModal: false,
     };
   }
 
@@ -40,18 +39,27 @@ class NavBar extends Component {
       maxHeight: "320px",
     };
 
-    var RegularServiceModal ={
-        marginTop: "-420px",
-        width: "20%",
-        minWidth: "350px",
-        left: "65%"
+    var DoorStep = {
+      marginTop: "-420px",
+      minWidth: "350px",
+      maxWidth: "350px",
+      left: "60%",
+    };
+
+    var CollectDrop = {
+      marginTop: "-420px",
+      minWidth: "350px",
+      maxWidth: "700px",
+      left: "55%",
     };
 
     return (
-      <div>
+      <div className="flex">
         <nav className="flex-grow w-full bg-gray-200 opc h-auto shadow-md fixed Graphik-Regular-Web z-10">
           <div className="flex justify-around items-center">
-            <div className="w-48"></div>
+            <div className="w-40">
+              <img tabIndex="0" alt="Accenture Logo" src={logo} />
+            </div>
 
             {/* NavBar on Regular Sized Screens */}
             <>
@@ -116,7 +124,7 @@ class NavBar extends Component {
           </div>
 
           {/* NavBar on Smaller Screens */}
-          <div className={this.setShowOptions ? "md:hidden" : "hidden"}>
+          <div className={this.state.setShowOptions ? "md:hidden" : "hidden"}>
             <div className="my-4 flex flex-col items-center">
               <>
                 <div className="w-full text-center px-4 flex flex-col">
@@ -127,7 +135,7 @@ class NavBar extends Component {
                     onClick={this.handleClick.bind(this)}
                     exact
                   >
-                    Clients
+                    About Us
                   </NavLink>
 
                   <NavLink
@@ -137,7 +145,7 @@ class NavBar extends Component {
                     onClick={this.handleClick.bind(this)}
                     exact
                   >
-                    Reports
+                    Services
                   </NavLink>
 
                   <a
@@ -147,8 +155,16 @@ class NavBar extends Component {
                     rel="noopener noreferrer"
                     onClick={this.handleClick.bind(this)}
                   >
-                    Help
+                    FAQs
                   </a>
+                  <div>
+                    <button
+                      className="bg-red-600 text-gray-50 font-bold rounded border-b-2 border-purple-300 hover:bg-purple-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center m-2 sm:m-3"
+                      onClick={() => this.simpleDialog.show()}
+                    >
+                      <span>Book A Service</span>
+                    </button>
+                  </div>
                 </div>
 
                 {/* NavBar Close Button */}
@@ -187,21 +203,30 @@ class NavBar extends Component {
 
           <button
             className="bg-red-600 text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center m-2 sm:m-3"
-            onClick={() => {this.simpleDialog.hide(); this.simpleDialog1.show()}}
+            onClick={() => {
+              this.simpleDialog.hide();
+              this.simpleDialog1.show();
+            }}
           >
             Door Step Service
           </button>
 
           <button
             className="bg-red-600 text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center m-2 sm:m-3"
-            onClick={() => {this.simpleDialog2.show(); this.simpleDialog.hide()}}
+            onClick={() => {
+              this.simpleDialog2.show();
+              this.simpleDialog.hide();
+            }}
           >
             Collect & Return
           </button>
 
           <button
             className="bg-red-600 text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center m-2 sm:m-3"
-            onClick={() => {this.simpleDialog3.show(); this.simpleDialog.hide()}}
+            onClick={() => {
+              this.simpleDialog3.show();
+              this.simpleDialog.hide();
+            }}
           >
             Book a Custom Paint Job
           </button>
@@ -220,7 +245,7 @@ class NavBar extends Component {
 
         <SkyLight
           hideOnOverlayClicked
-          dialogStyles={RegularServiceModal}
+          dialogStyles={DoorStep}
           ref={(ref) => (this.simpleDialog1 = ref)}
         >
           <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
@@ -231,17 +256,38 @@ class NavBar extends Component {
             <span className="underline1"></span>
           </div>
 
-            <RegularService />
+          <RegularService />
+        </SkyLight>
 
-          <div>
+        <SkyLight
+          hideOnOverlayClicked
+          dialogStyles={CollectDrop}
+          ref={(ref) => (this.simpleDialog2 = ref)}
+        >
+          <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
+            Door Step Service
+          </div>
+
+          <div className="pb-2">
             <span className="underline1"></span>
+          </div>
+          <div className="grid grid-flow-col">
+            <PremiumService />
+            <div
+              style={{
+                borderLeft: "2px solid grey",
+                height: "100%",
+                position: "relative",
+                left: "50%",
+                top: "0",
+              }}
+            ></div>
+            <UltimateStrip />
           </div>
         </SkyLight>
       </div>
     );
   }
 }
-
-const MyModal = ({ show }) => <Modal show>My Modal</Modal>;
 
 export default NavBar;

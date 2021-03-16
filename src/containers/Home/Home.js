@@ -3,7 +3,7 @@ import NavBar from "../../components/NavBar/NavBar";
 
 function Home() {
   return (
-    <div>
+    <div className="flex">
       <NavBar />
       Hello World
     </div>

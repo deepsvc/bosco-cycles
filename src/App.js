@@ -3,7 +3,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Home from "./containers/Home/Home"
 
-import logo from './logo.svg';
 import './App.css';
 import './index.css';
 import "./assets/css/tailwind.css";
