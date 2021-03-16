@@ -1,0 +1,41 @@
+.cool-link {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+}
+
+.cool-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 4px;
+  background: #7500c0;
+  /* transition: width .3s; */
+}
+
+.cool-link:hover::after {
+  width: 100%;
+  /* transition: width .3s; */
+}
+
+.opc {
+  background-color: rgba(242, 242, 242, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.underline1 {
+  display: block;
+  border: none;
+  color: white;
+  height: 1px;
+  background: black;
+  background: -webkit-gradient(
+    radial,
+    50% 50%,
+    0,
+    50% 50%,
+    350,
+    from(#000),
+    to(#fff)
+  );
+}

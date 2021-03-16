@@ -1,0 +1,10 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+
+.active-link {
+  @apply text-gray-800 text-sm font-bold mr-4 !important;
+}
+
+@tailwind utilities;
