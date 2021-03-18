@@ -1,11 +1,18 @@
 import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
+import Header from "../../components/Header/Header";
+import HowItWorks from "../../components/HowItWorks/HowItWorks";
+import About from "../../components/About/About";
 
 function Home() {
   return (
-    <div className="flex">
+    <div className="flex flex-col">
       <NavBar />
-      Hello World
+      <div className="overflow-hidden object-scale-down">
+        <Header />
+      </div>
+      <HowItWorks />
+      <About />
     </div>
   );
 }

@@ -9,7 +9,7 @@
   display: block;
   width: 0;
   height: 4px;
-  background: #7500c0;
+  background: red;
   /* transition: width .3s; */
 }
 
@@ -19,7 +19,7 @@
 }
 
 .opc {
-  background-color: rgba(242, 242, 242, 0.7);
+  background-color: rgba(29, 29, 29, 0.7);
   backdrop-filter: blur(10px);
 }
 

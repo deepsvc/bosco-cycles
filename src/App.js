@@ -1,18 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Home from "./containers/Home/Home"
+import Home from "./containers/Home/Home";
+import Loading from "./components/Loading/Loading";
+import NotFound from "./components/NotFound/NotFound"
 
-import './App.css';
-import './index.css';
+import "./App.css";
+import "./index.css";
 import "./assets/css/tailwind.css";
+import About from "./components/About/About";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" data-spy="scroll"> 
       <BrowserRouter>
+      <React.Suspense fallback={<Loading />}>
         <Switch>
           <Route path="/" exact component={Home} />
+          {/* <Route path="/#about" component={About} /> */}
           {/* <Route path="/book" exact component={ServiceScreen} />
           <Route path="/BookDoorStep" exact component={ServiceScreenDoorStep} />
           <Route path="/brakebleeding" exact component={BrakeBleeding} />
@@ -37,7 +42,9 @@ function App() {
             component={SuspensionServiceForm}
           />
           <Route path="/DriveTrainForm" exact component={DriveForm} /> */}
+          <Route component={NotFound} />
         </Switch>
+        </React.Suspense>
       </BrowserRouter>
     </div>
   );

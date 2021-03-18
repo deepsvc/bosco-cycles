@@ -30,9 +30,9 @@ class NavBar extends Component {
 
   render() {
     const smallScreenMenuStyle =
-      "border pl-4 p-2 my-2 text-gray-800 text-xl font-semibold hover:text-purple-600";
+      "border pl-4 p-2 my-2 text-gray-50 text-xl font-bold hover:text-red-500";
     const bigScreenMenuStyle =
-      "block text-gray-800 text-sm font-semibold ml-auto px-6 py-6 hover:text-purple-600";
+      "block text-gray-50 text-md font-bold ml-auto px-6 py-6 hover:text-red-500 hover:text-xl";
 
     var MainModal = {
       minHeight: "150px",
@@ -65,25 +65,15 @@ class NavBar extends Component {
             <>
               <div className="hidden Graphik-Regular-Web md:flex md:items-center">
                 <div className="cool-link">
-                  <NavLink
-                    activeClassName="text-purple-600"
-                    className={bigScreenMenuStyle}
-                    to="/clients"
-                    exact
-                  >
-                    About Us
-                  </NavLink>
+                  <a aria-current="page" href="/#about">
+                    <div className={bigScreenMenuStyle}>About Us</div>
+                  </a>
                 </div>
 
                 <div className="cool-link">
-                  <NavLink
-                    activeClassName="text-purple-600"
-                    className={bigScreenMenuStyle}
-                    to="/reports"
-                    exact
-                  >
-                    Services
-                  </NavLink>
+                  <a aria-current="page" href="/#about">
+                    <div className={bigScreenMenuStyle}>Services</div>
+                  </a>
                 </div>
 
                 <div className="cool-link">
@@ -116,7 +106,7 @@ class NavBar extends Component {
                 height={20}
                 strokeWidth={3}
                 rotate={0}
-                color="#2d3748"
+                color="#F5F5F5"
                 borderRadius={2}
                 animationDuration={0.2}
               />
