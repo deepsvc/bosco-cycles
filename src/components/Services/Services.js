@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 
+import PremiumService from "../BookServiceModal/PremiumService/PremiumService";
+import RegularService from "../BookServiceModal/RegularService/RegularService";
+import UltimateStrip from "../BookServiceModal/UltimateStrip/UltimateStrip";
+
+import bg from "../../assets/images/servicebg.jpg";
+
 class Services extends Component {
   constructor(props) {
     super(props);
@@ -7,38 +13,21 @@ class Services extends Component {
 
   render() {
     return (
-      <>
-        <div className="container text-left ml-80 w-8/12 mb-28" id="about">
-          <div>
-            <p className="text-2xl italic">
-              We are Ardent Lovers of the Humble Bicycle!
-            </p>
-            <p className="text-2xl italic">
-              We are genuine fast track service provider.
-            </p>
-            <p className="text-2xl italic">
-              We Understand the hassle of getting bicycle serviced. From taking
-              your bike to a workshop and the long waiting time.
-            </p>
-            <p className="text-2xl italic">
-              We are here to make sure you get the best of our service at your
-              doorstep thereby saving time and also letting you observe the
-              complete process.
-            </p>
-            <p className="text-2xl italic">
-              We cater to all kinds of Bicycles!
-            </p>
-            <p className="text-2xl italic">
-              Whether you're a kid riding your bicycle to school, a commuter
-              nipping through traffic, a roadie who does long rides or a a
-              mountain biker who hits the trails!
-            </p>
-            <p className="text-2xl italic">
-              WE ARE HERE TO CATER FOR YOUR NEEDS!
-            </p>
+      <div className="h-screen services items-center" id="service">
+        <div className="mt-40 mx-64">
+        <div className="flex flex-row">
+          <div className="grid grid-flow-col mr-5 w-1/3 bg-white">
+            <RegularService />
+          </div>
+          <div className="grid grid-flow-col mr-5 w-1/3 bg-white">
+            <PremiumService />
+          </div>
+          <div className="grid grid-flow-col w-1/3 bg-white">
+            <UltimateStrip />
           </div>
         </div>
-      </>
+      </div>
+      </div>
     );
   }
 }

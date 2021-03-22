@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 
 function UltimateStrip() {
   return (
-    <div className="px-2">
-      <div className="heading container">
+    <div className="flex flex-col">
+      <div className="heading">
         <h1 className="serviceName">ULIMATE STRIP</h1>
       </div>
-      <div className="content px-3">
-        <h1 className="text-white font-semibold p-1 -mx-3 rounded text-4xl bg-gray-900">1800/-*</h1>
+      <div className="content px-3 h-full">
+        <h1 className="text-white font-semibold p-1 -mx-3 text-4xl bg-gray-900">
+          1800/-*
+        </h1>
         <span style={{ fontSize: "0.8rem" }}>Price is Inclusive of GST</span>
         <p className="customPBold">
           {" "}
@@ -67,28 +69,13 @@ function UltimateStrip() {
           applied.
           <br /> <br />
         </div>
-
-
-          <Link
-          className=""
-            to="/book"
-            style={{
-              textDecoration: "none",
-              color: "black",
-            }}
-          >
-            <h1
-              className="text-white font-semibold p-1 -mx-3 rounded text-4xl bg-gray-900 m-0"
-              style={{
-                fontWeight: "600",
-                fontSize: "1.5rem",
-                fontFamily: "Poppins, sans-serif",
-              }}
-            >
-              BOOK SERVICE
-            </h1>
-          </Link>
-
+      </div>
+      <div className="">
+        <Link to="/book">
+          <h1 className="text-white font-bold object-bottom p-2 text-2xl bg-gray-900">
+            BOOK SERVICE
+          </h1>
+        </Link>
       </div>
     </div>
   );

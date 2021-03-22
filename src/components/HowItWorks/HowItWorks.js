@@ -14,8 +14,8 @@ class HowItWorks extends Component {
   render() {
     return (
       <>
-      <div className="h-screen m-28 bg-gray-100 z-0 shadow-inner">
-        <div className="flex space-x-4 space-x-reverse flex-row h-screen">
+      <div className="m-28 bg-gray-100 z-0 shadow-inner">
+        <div className="flex space-x-4 space-x-reverse flex-row h-full py-20">
           <div className="flex flex-row items-center">
           <div className="bg-red-800 h-3/6 -ml-28 w-28 p-4"></div>
             <div className="bg-red-600 h-4/6 w-80 p-4 flex items-center text-center shadow-xl">

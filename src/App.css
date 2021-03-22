@@ -315,7 +315,6 @@ input:focus {
 .heading {
   background: rgb(234, 13, 41);
   text-align: center;
-  border-radius: 5px;
 }
 .price {
   text-align: center;
@@ -334,7 +333,7 @@ input:focus {
   background: white;
 }
 .services {
-  /* background-image: url("./images/servicebg.jpg"); */
+  background-image: url("./assets/images/servicebg.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -358,18 +357,19 @@ input:focus {
   height: 15rem;
   width: 15rem;
   border-radius: 50%;
+  background-color: rgb(237, 237, 237);
 }
 .g1 {
-  /* background-image: url("./images/gif1.gif"); */
+  background-image: url("./assets/images/gif1.gif");
 }
 .g2 {
-  /* background-image: url("./images/gif2.gif"); */
+  background-image: url("./assets/images/gif2.gif");
 }
 .g3 {
-  /* background-image: url("./images/gif3.gif"); */
+  background-image: url("./assets/images/gif3.gif");
 }
 .g4 {
-  /* background-image: url("./images/gif4.gif"); */
+  background-image: url("./assets/images/gif4.gif");
 }
 .bg {
   height: 30rem;

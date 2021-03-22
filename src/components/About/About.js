@@ -30,7 +30,7 @@ class About extends Component {
             </p>
             <p className="text-2xl italic">
               Whether you're a kid riding your bicycle to school, a commuter
-              nipping through traffic, a roadie who does long rides or a a
+              nipping through traffic, a roadie who does long rides or a
               mountain biker who hits the trails!
             </p>
             <p className="text-2xl italic">

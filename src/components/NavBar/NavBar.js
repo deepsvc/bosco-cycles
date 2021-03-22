@@ -71,7 +71,7 @@ class NavBar extends Component {
                 </div>
 
                 <div className="cool-link">
-                  <a aria-current="page" href="/#about">
+                  <a aria-current="page" href="/#service">
                     <div className={bigScreenMenuStyle}>Services</div>
                   </a>
                 </div>
@@ -255,7 +255,7 @@ class NavBar extends Component {
           ref={(ref) => (this.simpleDialog2 = ref)}
         >
           <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
-            Door Step Service
+            Collect & Drop Service
           </div>
 
           <div className="pb-2">

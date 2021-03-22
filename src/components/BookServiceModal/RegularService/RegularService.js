@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 function RegularService() {
   return (
     <div>
-      <div className="heading">
+      <div className="heading container">
         <h1 className="serviceName">REGULAR SERVICE</h1>
       </div>
       <div className="content px-3">
-        <h1 className="text-white font-semibold p-1 -mx-3 rounded text-4xl bg-gray-900">
+        <h1 className="text-white font-semibold p-1 -mx-3 text-4xl bg-gray-900">
           700/-*
         </h1>
         <span style={{ fontSize: "0.8rem" }}>Price is Inclusive of GST</span>
@@ -70,25 +70,14 @@ function RegularService() {
           <span style={{ color: "red" }}>»</span> Clean up of the bike
           <br /> <br /> <br />
         </div>
-        <Link
-          to="/BookDoorStep"
-          style={{
-            textDecoration: "none",
-            color: "black",
-          }}
-        >
-          <h1
-            className="text-white font-semibold p-1 -mx-3 rounded text-4xl bg-gray-900 m-0"
-            style={{
-              fontWeight: "600",
-              fontSize: "1.5rem",
-              fontFamily: "Poppins, sans-serif",
-            }}
-          >
-            BOOK SERVICE
-          </h1>
-        </Link>
       </div>
+      <div className="">
+          <Link to="/book">
+            <h1 className="text-white font-bold p-2 bottom-0 text-2xl bg-gray-900">
+              BOOK SERVICE
+            </h1>
+          </Link>
+        </div>
     </div>
   );
 }
