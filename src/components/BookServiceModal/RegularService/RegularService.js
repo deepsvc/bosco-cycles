@@ -10,12 +10,14 @@ function RegularService() {
         <h1 className="serviceName">REGULAR SERVICE</h1>
       </div>
       <div className="content px-3">
-        <h1 className="text-white font-semibold p-1 -mx-3 rounded text-4xl bg-gray-900">700/-*</h1>
+        <h1 className="text-white font-semibold p-1 -mx-3 rounded text-4xl bg-gray-900">
+          700/-*
+        </h1>
         <span style={{ fontSize: "0.8rem" }}>Price is Inclusive of GST</span>
         <p>Recommended for Occasional Riders.</p>
         <p>
-          Get your bike looking new and running smooth! Once in 6 months would be
-          an ideal time.
+          Get your bike looking new and running smooth! Once in 6 months would
+          be an ideal time.
         </p>
         <p>
           We pick up your bike, Service it and drop it back in mint condition.
@@ -68,24 +70,24 @@ function RegularService() {
           <span style={{ color: "red" }}>»</span> Clean up of the bike
           <br /> <br /> <br />
         </div>
-          <Link
-            to="/BookDoorStep"
+        <Link
+          to="/BookDoorStep"
+          style={{
+            textDecoration: "none",
+            color: "black",
+          }}
+        >
+          <h1
+            className="text-white font-semibold p-1 -mx-3 rounded text-4xl bg-gray-900 m-0"
             style={{
-              textDecoration: "none",
-              color: "black",
+              fontWeight: "600",
+              fontSize: "1.5rem",
+              fontFamily: "Poppins, sans-serif",
             }}
           >
-            <h1
-              className="text-white font-semibold p-1 -mx-3 rounded text-4xl bg-gray-900 m-0"
-              style={{
-                fontWeight: "600",
-                fontSize: "1.5rem",
-                fontFamily: "Poppins, sans-serif",
-              }}
-            >
-              BOOK SERVICE
-            </h1>
-          </Link>
+            BOOK SERVICE
+          </h1>
+        </Link>
       </div>
     </div>
   );
