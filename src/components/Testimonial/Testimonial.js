@@ -9,15 +9,15 @@ class Testimonial extends Component {
 
   render() {
     return (
-      <div className="h-auto flex pb-20 flex-col items-center">
-        <h1 className="text-red-600 text-5xl font-extrabold uppercase">
+      <div className="h-auto bg-gray-100 z-0 shadow-inner flex flex-col items-center">
+        <h1 className="text-red-600 pt-20 text-5xl font-extrabold uppercase">
           Testimonial
         </h1>
         <div className="w-3/4">
           <Carousel
             className="py-10"
             autoPlay={true}
-            interval={5000}
+            interval={6000}
             infiniteLoop={true}
             stopOnHover={false}
             useKeyboardArrows={true}

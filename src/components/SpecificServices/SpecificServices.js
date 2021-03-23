@@ -8,7 +8,7 @@ class SpecificServices extends Component {
 
   render() {
     return (
-      <div className="h-auto flex py-20 flex-col items-center">
+      <div className="h-auto flex pt-20 flex-col items-center">
         <h1 className="text-red-600 text-5xl font-extrabold uppercase">
           Specific Service
         </h1>

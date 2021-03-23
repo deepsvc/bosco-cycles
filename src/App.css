@@ -146,11 +146,9 @@ input:focus {
   appearance: none;
 }
 .address {
-  /* background-image: url("./images/contactbg.jpg"); */
+  background-image: url("./assets/images/contactbg.jpg");
   background-size: cover;
   background-position: center;
-  color: white;
-  height: 70vh;
 }
 
 @media (min-width: 576px) {

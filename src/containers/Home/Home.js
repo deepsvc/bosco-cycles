@@ -6,6 +6,8 @@ import About from "../../components/About/About";
 import Services from "../../components/Services/Services";
 import SpecificServices from "../../components/SpecificServices/SpecificServices"
 import Testimonial from "../../components/Testimonial/Testimonial";
+import Contact from "../../components/Contact/Contact";
+import Footer from "../../components/Footer/Footer";
 
 function Home() {
   return (
@@ -19,6 +21,8 @@ function Home() {
       <Services />
       <SpecificServices />
       <Testimonial />
+      <Contact />
+      <Footer />
     </div>
   );
 }
