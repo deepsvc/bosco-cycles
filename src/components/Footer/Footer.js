@@ -9,33 +9,26 @@ import {
 } from "react-feather";
 
 class Footer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      setShowOptions: false,
-    };
-  }
 
   render() {
     return (
-      <div className="flex flex-row w-full justify-center items-center address bottom-0">
+      <div className="flex lg:flex-row flex-col w-full justify-center items-center address">
         <iframe
-          className="w-5/12 m-20"
+          className="lg:w-5/12 w-4/5 m-5 lg:m-20"
           width="100%"
           height="350"
           scrolling="no"
           src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Yelahanka,bangalore+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         ></iframe>
 
-        <div className="w-5/12 ml-20 text-left">
-          <span className="text-4xl text-white font-bold">REACH US AT</span>
+        <div className="lg:w-5/12 w-4/5 text-left">
+          <span className="text-3xl text-white font-bold">REACH US AT</span>
           <div className="mt-5">
-            <h5 className="my-3 flex flex-row text-white text-xl font-semibold items-center">
+            <h5 className="my-3 flex flex-row text-white text-lg font-semibold items-center">
               <Mail color="white" size="30" strokeWidth="2" className="mr-2" />
               support@boscobicycleworks.com
             </h5>
-            <h5 className="my-3 flex flex-row text-white text-xl font-semibold items-center">
+            <h5 className="my-3 flex flex-row text-white text-lg font-semibold items-center">
               <PhoneCall
                 color="white"
                 size="30"
@@ -44,7 +37,7 @@ class Footer extends Component {
               />
               +91 8904019840 / +91 9964288130
             </h5>
-            <h5 className="mmy-3 flex flex-row text-white text-xl font-semibold items-center">
+            <h5 className="mmy-3 flex flex-row text-white text-lg font-semibold items-center">
               <MapPin
                 color="white"
                 size="30"
