@@ -5,25 +5,26 @@ import { Link } from "react-router-dom";
 
 function RegularService() {
   return (
-    <div>
-      <div className="heading container">
-        <h1 className="serviceName">REGULAR SERVICE</h1>
+    <div className="flex flex-col">
+      <div className="heading">
+        <h1 className="serviceName text-2xl py-2">REGULAR SERVICE</h1>
       </div>
-      <div className="content px-3">
-        <h1 className="text-white font-semibold p-1 -mx-3 text-4xl bg-gray-900">
+      <h1 className="text-white font-semibold p-1 text-3xl bg-gray-900">
           700/-*
         </h1>
-        <span style={{ fontSize: "0.8rem" }}>Price is Inclusive of GST</span>
-        <p>Recommended for Occasional Riders.</p>
-        <p>
+        <span className="text-xs">Price is Inclusive of GST</span>
+      <div style={{height: "65vh"}} className="content px-3 h-11/12 overflow-auto">
+
+        <p className="font-semibold py-2">Recommended for Occasional Riders.</p>
+        <p className="text-sm pb-2 text-left">
           Get your bike looking new and running smooth! Once in 6 months would
           be an ideal time.
         </p>
-        <p>
+        <p className="text-sm pb-2 text-left">
           We pick up your bike, Service it and drop it back in mint condition.
           Pickup and drop charges included.
         </p>
-        <p>
+        <p className="text-sm pb-2 text-left">
           A Quick tune-up which covers all the basic checks to keep you on the
           move!
         </p>

@@ -31,7 +31,7 @@ class HowItWorks extends Component {
 
           <div className="flex items-center w-4/5">
             <div className="flex flex-col space-y-6 ml-40 ">
-              <div class="items-center flex flex-row h-auto p-4s">
+              <div className="items-center flex flex-row h-auto p-4s">
                 <div className="w-36">
                   <img src={image1} />
                 </div>
@@ -44,7 +44,7 @@ class HowItWorks extends Component {
                 </div>
               </div>
 
-              <div class="items-center flex flex-row h-auto p-4">
+              <div className="items-center flex flex-row h-auto p-4">
                 <div className="w-36">
                   <img src={image2} />
                 </div>
@@ -59,7 +59,7 @@ class HowItWorks extends Component {
                 </div>
               </div>
 
-              <div class="items-center flex flex-row h-auto p-4">
+              <div className="items-center flex flex-row h-auto p-4">
                 <div className="w-36">
                   <img src={image3} />
                 </div>
@@ -72,7 +72,7 @@ class HowItWorks extends Component {
                 </div>
               </div>
 
-              <div class="items-center flex flex-row h-auto p-4">
+              <div className="items-center flex flex-row h-auto p-4">
                 <div className="w-36">
                   <img src={image4} />
                 </div>
@@ -82,7 +82,7 @@ class HowItWorks extends Component {
                 </div>
               </div>
 
-              <div class="items-center flex flex-row h-auto p-4">
+              <div className="items-center flex flex-row h-auto p-4">
                 <div className="w-36">
                   <img src={image5} />
                 </div>

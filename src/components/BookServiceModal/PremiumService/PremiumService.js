@@ -7,19 +7,20 @@ function PremiumService() {
   return (
     <div className="flex flex-col">
       <div className="heading">
-        <h1 className="serviceName">PREMIUM SERVICE</h1>
+        <h1 className="serviceName text-2xl py-2">PREMIUM SERVICE</h1>
       </div>
-      <div className="content px-3 h-full">
-        <h1 className="text-white font-semibold p-1 -mx-3 text-4xl bg-gray-900">
+      <h1 className="text-white font-semibold p-1 text-3xl bg-gray-900">
           1300/-*
         </h1>
-        <span style={{ fontSize: "0.8rem" }}>Price is Inclusive of GST</span>
-        <p> Recommended for Regular Riders.</p>
-        <p>
+        <span className="text-xs">Price is Inclusive of GST</span>
+      <div style={{height: "65vh"}} className="content px-3 h-11/12 overflow-auto">
+
+        <p className="font-semibold py-2"> Recommended for Regular Riders</p>
+        <p className="text-sm py-2 text-left">
           Get your bike looking new and running smooth ! 6 months once would be
           an ideal time.
         </p>
-        <p>
+        <p className="text-sm py-2 text-left">
           We pick up your bike, Service it and drop it back in mint condition.
           Pickup and drop charges included.
         </p>

@@ -48,6 +48,9 @@ const sampleJSON = {
 };
 
 function FAQ() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Navbar />
