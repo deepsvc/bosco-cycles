@@ -9,7 +9,7 @@ class Testimonial extends Component {
         <h1 className="text-red-600 pt-20 text-5xl font-extrabold uppercase">
           Testimonial
         </h1>
-        <div className="w-3/4">
+        <div className="lg:w-3/4 w-11/12">
           <Carousel
             className="py-10"
             autoPlay={true}

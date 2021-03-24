@@ -14,9 +14,9 @@ class HowItWorks extends Component {
   render() {
     return (
       <>
-        <div className="m-28 bg-gray-100 z-0 shadow-inner">
-          <div className="flex flex-row h-full py-10">
-            <div className="flex flex-row items-center">
+        <div className="md:m-28 m-5 bg-gray-100 z-0 shadow-inner">
+          <div className="flex lg:flex-row flex-col h-full py-10">
+            <div className="hidden lg:flex flex-row items-center">
               <div className="bg-red-800 h-4/6 -ml-28 w-28 p-4"></div>
               <div className="bg-red-600 h-5/6 w-80 p-4 flex items-center text-center shadow-xl">
                 <span className="m-auto font-family-apple-system text-gray-50 text-7xl howitworks font-bold">
@@ -29,9 +29,13 @@ class HowItWorks extends Component {
               </div>
             </div>
 
-            <div className="flex items-center w-4/5 ml-20 my-20">
+            <h1 className="text-red-600 lg:hidden text-5xl font-extrabold uppercase">
+              How it Works
+            </h1>
+
+            <div className="flex items-center md:w-4/5 md:ml-20 mx-12 md:my-20 mt-10">
               <div className="flex flex-col">
-                <div className="items-center grid grid-cols-5 gap-4 flex w-4/5 flex-row pb-10">
+                <div className="items-center grid grid-cols-5 gap-4 flex md:w-4/5 flex-row pb-10">
                   <div className="col-span-1">
                     <img src={image1} />
                   </div>
@@ -46,7 +50,7 @@ class HowItWorks extends Component {
                   </div>
                 </div>
 
-                <div className="items-center grid grid-cols-5 gap-4 flex w-4/5 flex-row pb-10">
+                <div className="items-center grid grid-cols-5 gap-4 flex md:w-4/5 flex-row pb-10">
                   <div className="col-span-1">
                     <img src={image2} />
                   </div>
@@ -61,7 +65,7 @@ class HowItWorks extends Component {
                   </div>
                 </div>
 
-                <div className="items-center grid grid-cols-5 gap-4 flex w-4/5 flex-row pb-10">
+                <div className="items-center grid grid-cols-5 gap-4 flex md:w-4/5 flex-row pb-10">
                   <div className="col-span-1">
                     <img src={image3} />
                   </div>
@@ -74,7 +78,7 @@ class HowItWorks extends Component {
                   </div>
                 </div>
 
-                <div className="items-center grid grid-cols-5 gap-4 flex w-4/5 flex-row pb-10">
+                <div className="items-center grid grid-cols-5 gap-4 flex md:w-4/5 flex-row pb-10">
                   <div className="col-span-1">
                     <img src={image4} />
                   </div>
@@ -86,7 +90,7 @@ class HowItWorks extends Component {
                   </div>
                 </div>
 
-                <div className="items-center grid grid-cols-5 gap-4 flex w-4/5 flex-row pb-10">
+                <div className="items-center grid grid-cols-5 gap-4 flex md:w-4/5 flex-row pb-10">
                   <div className="col-span-1">
                     <img src={image5} />
                   </div>

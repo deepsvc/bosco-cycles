@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 
 class About extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
       <>
-        <div className="container text-left ml-80 w-8/12 mb-28" id="about">
+        <div className="text-left ml-10 md:ml-40 2xl:ml-80 w-10/12 md:w-8/12 mb-28" id="about">
           <div>
             <p className="text-2xl italic">
               We are Ardent Lovers of the Humble Bicycle!

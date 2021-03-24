@@ -13,16 +13,16 @@ class Services extends Component {
 
   render() {
     return (
-      <div className="h-screen services items-center" id="service">
-        <div className="mt-20 mx-20 2xl:mx-64">
-        <div className="flex flex-row">
-          <div className="grid mr-5 w-1/3 bg-white">
+      <div className="lg:h-screen services items-center" id="service">
+        <div className="mt-20 mx-10 2xl:mx-64">
+        <div className="flex lg:flex-row flex-col">
+          <div className="lg:mr-5 mb-5 lg:mb-0 lg:w-1/3 bg-white">
             <RegularService />
           </div>
-          <div className="grid  mr-5 w-1/3 bg-white">
+          <div className="lg:mr-5 mb-5 lg:mb-0 lg:w-1/3 bg-white">
             <PremiumService />
           </div>
-          <div className="grid  w-1/3 bg-white">
+          <div className="lg:w-1/3 mb-5 lg:mb-0 bg-white">
             <UltimateStrip />
           </div>
         </div>

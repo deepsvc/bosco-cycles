@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 class SpecificServices extends Component {
   render() {
     return (
-      <div className="h-auto flex pt-20 flex-col items-center">
+      <div className="h-auto flex flex-col pt-20 items-center">
         <h1 className="text-red-600 text-5xl font-extrabold uppercase">
           Specific Service
         </h1>
-        <div className="w-3/4">
-          <div className="mt-20 flex flex-row justify-around items-center">
+        <div className="lg:w-3/4">
+          <div className="mt-20  lg:flex-row grid lg:flex flex-col lg:justify-around items-center">
             <Link to="/BrakeBleeding">
-              <div>
-                <div className="gifHolder g4 shadow-xl"></div>
-                <div className="2xl:text-2xl text-xl py-10 font-semibold">
+              <div className="flex flex-row lg:flex-col items-center">
+                <div className="gifHolder g4 shadow-xl mr-5 mb-5 lg:mr-0 lg:mb-0"></div>
+                <div className="2xl:text-2xl text-left lg:text-center text-xl py-10 font-semibold">
                   BRAKE BLEEDING
                   <span className="text-lg text-red-600">
                     <br />
@@ -23,9 +23,9 @@ class SpecificServices extends Component {
               </div>
             </Link>
             <Link to="/WheelTuring">
-              <div>
-                <div className="gifHolder g2 shadow-xl"></div>
-                <div className="2xl:text-2xl text-xl py-10 font-semibold">
+              <div className="flex flex-row lg:flex-col items-center">
+                <div className="gifHolder g2 shadow-xl mr-5 mb-5 lg:mr-0 lg:mb-0"></div>
+                <div className="2xl:text-2xl text-left lg:text-center text-xl py-10 font-semibold">
                   WHEEL TRUING
                   <span className="text-lg text-red-600">
                     <br />
@@ -35,9 +35,9 @@ class SpecificServices extends Component {
               </div>
             </Link>
             <Link to="/SuspensionService">
-              <div>
-                <div className="gifHolder g3 shadow-xl"></div>
-                <div className="2xl:text-2xl text-xl py-10 font-semibold">
+              <div className="flex flex-row lg:flex-col items-center">
+                <div className="gifHolder g3 shadow-xl mr-5 mb-5 lg:mr-0 lg:mb-0"></div>
+                <div className="2xl:text-2xl text-left lg:text-center text-xl py-10 font-semibold">
                   SUSPENSION SERVICE
                   <span className="text-lg text-red-600">
                     <br />
@@ -47,9 +47,9 @@ class SpecificServices extends Component {
               </div>
             </Link>
             <Link to="/DriveTrainService">
-              <div>
-                <div className="gifHolder g1 shadow-xl"></div>
-                <div className="2xl:text-2xl text-xl py-10 font-semibold">
+              <div className="flex flex-row lg:flex-col items-center">
+                <div className="gifHolder g1 shadow-xl mr-5 mb-5 lg:mr-0 lg:mb-0"></div>
+                <div className="2xl:text-2xl text-left lg:text-center text-xl py-10 font-semibold">
                   DRIVE TRAIN SERVICE
                   <span className="text-lg text-red-600">
                     <br />

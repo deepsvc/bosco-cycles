@@ -84,10 +84,10 @@ class Contact extends Component {
   render() {
     return (
       <div
-        className="flex flex-row bg-gray-800 shadow-inner justify-center items-center"
+        className="flex lg:flex-row flex-col bg-gray-800 shadow-inner justify-center items-center"
         id="contact"
       >
-        <div className="w-5/12">
+        <div className="lg:w-5/12 w-4/5">
           <h1 className="text-white pt-20 text-3xl font-semibold uppercase">
             Make an Enquiry
           </h1>
@@ -96,7 +96,7 @@ class Contact extends Component {
             onSubmit={this.handleSubmit}
           >
             <input
-              className="placeholder-gray-500 my-5 py-2 px-2 w-3/4 rounded placeholder-opacity-50"
+              className="placeholder-gray-500 my-5 py-2 px-2 lg:w-3/4 w-11/12 rounded placeholder-opacity-50"
               type="text"
               name="name"
               value={this.state.name}
@@ -105,7 +105,7 @@ class Contact extends Component {
             />
 
             <input
-              className="placeholder-gray-500 my-5 py-2 px-2 w-3/4 rounded placeholder-opacity-50"
+              className="placeholder-gray-500 my-5 py-2 px-2 lg:w-3/4 w-11/12 rounded placeholder-opacity-50"
               type="text"
               name="phone"
               value={this.state.phone}
@@ -114,7 +114,7 @@ class Contact extends Component {
             />
 
             <input
-              className="placeholder-gray-500 my-5 py-2 px-2 w-3/4 rounded placeholder-opacity-50"
+              className="placeholder-gray-500 my-5 py-2 px-2 lg:w-3/4 w-11/12 rounded placeholder-opacity-50"
               type="text"
               name="email"
               value={this.state.email}
@@ -123,7 +123,7 @@ class Contact extends Component {
             />
 
             <textarea
-              className="placeholder-gray-500 my-5 py-2 px-2 w-3/4 rounded placeholder-opacity-50"
+              className="placeholder-gray-500 my-5 py-2 px-2 lg:w-3/4 w-11/12 rounded placeholder-opacity-50"
               type="text"
               name="message"
               value={this.state.message}
@@ -138,7 +138,7 @@ class Contact extends Component {
             />
           </form>
         </div>
-        <div className="w-5/12 m-20">
+        <div className="lg:w-5/12 w-4/5 lg:m-20 mt-5 mb-12">
           <Player loop={true} playsInline autoPlay muted bigPlayButton={false}>
             <source src={vid} />
             <ControlBar autoHide={true} />
