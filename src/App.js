@@ -21,6 +21,9 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/FAQ" exact component={FAQ} />
           <Route path="/BrakeBleeding" exact component={(props) => <SpecificServiceDetails service="brake"  {...props} />} />
+          <Route path="/WheelTuring" exact component={(props) => <SpecificServiceDetails service="wheel"  {...props} />} />
+          <Route path="/SuspensionService" exact component={(props) => <SpecificServiceDetails service="suspension"  {...props} />} />
+          <Route path="/DriveTrainService" exact component={(props) => <SpecificServiceDetails service="drive"  {...props} />} />
           {/* <Route path="/#about" component={About} /> */}
           {/* <Route path="/book" exact component={ServiceScreen} />
           <Route path="/BookDoorStep" exact component={ServiceScreenDoorStep} />

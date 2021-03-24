@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import NavBar from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
+import NavBar from "../../NavBar/NavBar";
+import Footer from "../../Footer/Footer";
 
 function BrakeBleeding() {
   useEffect(() => {
     window.scrollTo(0, 0);
-}, []);
+  }, []);
   return (
     <>
       <NavBar />

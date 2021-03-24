@@ -22,13 +22,13 @@ class SpecificServices extends Component {
                 </div>
               </div>
             </Link>
-            <Link>
+            <Link to="/WheelTuring">
               <div>
                 <div className="gifHolder g2 shadow-xl"></div>
                 <div className="2xl:text-2xl text-xl py-10 font-semibold">WHEEL TRUING</div>
               </div>
             </Link>
-            <Link>
+            <Link to="/SuspensionService">
               <div>
                 <div className="gifHolder g3 shadow-xl"></div>
                 <div className="2xl:text-2xl text-xl py-10 font-semibold">
@@ -36,7 +36,7 @@ class SpecificServices extends Component {
                 </div>
               </div>
             </Link>
-            <Link>
+            <Link to="/DriveTrainService">
               <div>
                 <div className="gifHolder g1 shadow-xl"></div>
                 <div className="2xl:text-2xl text-xl py-10 font-semibold">

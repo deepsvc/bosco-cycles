@@ -1,18 +1,23 @@
 import React from "react";
-import BrakeBleeding from "../../components/BrakeBleeding/BrakeBleeding";
+import BrakeBleeding from "../../components/SpecificServicesPages/BrakeBleeding/BrakeBleeding";
+import WheelTurning from "../../components/SpecificServicesPages/WheelTurning/WheelTurning";
+import SuspensionService from "../../components/SpecificServicesPages/SuspensionService/SuspensionService";
+import DriveTrainService from "../../components/SpecificServicesPages/DriveTrainService/DriveTrainService";
 
 function SpecificServiceDetails(props) {
-    const {service} = props;
-    switch (service) {
-      case 'brake':
-        return <BrakeBleeding />;
-    //   case 'warning':
-    //     return <Warning text={text} />;
-    //   case 'error':
-    //     return <Error text={text} />;
-      default:
-        return null;
-    }
+  const { service } = props;
+  switch (service) {
+    case "brake":
+      return <BrakeBleeding />;
+    case "wheel":
+      return <WheelTurning />;
+    case "suspension":
+      return <SuspensionService />;
+    case "drive":
+      return <DriveTrainService />;
+    default:
+      return null;
   }
+}
 
-  export default SpecificServiceDetails;
+export default SpecificServiceDetails;
