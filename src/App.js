@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./containers/Home/Home";
 import Loading from "./components/Loading/Loading";
 import NotFound from "./components/NotFound/NotFound"
+import FAQ from "./containers/FAQ/FAQ"
 
 import "./App.css";
 import "./index.css";
@@ -17,11 +18,12 @@ function App() {
       <React.Suspense fallback={<Loading />}>
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/FAQ" exact component={FAQ} />
           {/* <Route path="/#about" component={About} /> */}
           {/* <Route path="/book" exact component={ServiceScreen} />
           <Route path="/BookDoorStep" exact component={ServiceScreenDoorStep} />
           <Route path="/brakebleeding" exact component={BrakeBleeding} />
-          <Route path="/FAQ" exact component={FAQ} />
+
           <Route path="/PaintJob" exact component={PaintJob} />
           <Route path="/WheelTurning" exact component={WheelTurning} />
           <Route

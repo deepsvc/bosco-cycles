@@ -78,9 +78,9 @@ class NavBar extends Component {
 
                 <div className="cool-link">
                   <NavLink
-                    activeClassName="text-purple-600"
+                    activeClassName="text-red-600"
                     className={bigScreenMenuStyle}
-                    to="/reports"
+                    to="/FAQ"
                     exact
                   >
                     FAQs
@@ -118,35 +118,22 @@ class NavBar extends Component {
             <div className="my-4 flex flex-col items-center">
               <>
                 <div className="w-full text-center px-4 flex flex-col">
-                  <NavLink
-                    activeclassname="active-link"
-                    className={smallScreenMenuStyle}
-                    to="/clients"
-                    onClick={this.handleClick.bind(this)}
-                    exact
-                  >
-                    About Us
-                  </NavLink>
+                <a aria-current="page" href="/#about">
+                    <div className={smallScreenMenuStyle}>About Us</div>
+                  </a>
+
+                  <a aria-current="page" href="/#service">
+                    <div className={smallScreenMenuStyle}>Services</div>
+                  </a>
 
                   <NavLink
-                    activeclassname="active-link"
+                    activeClassName="text-red-600"
                     className={smallScreenMenuStyle}
-                    to="/reports"
-                    onClick={this.handleClick.bind(this)}
+                    to="/FAQ"
                     exact
-                  >
-                    Services
-                  </NavLink>
-
-                  <a
-                    className={smallScreenMenuStyle}
-                    href="https://alm.accenture.com/wiki/display/WADEFPEO/WADE+Home"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={this.handleClick.bind(this)}
                   >
                     FAQs
-                  </a>
+                  </NavLink>
                   <div>
                     <button
                       className="bg-red-600 text-gray-50 font-bold rounded border-b-2 border-purple-300 hover:bg-purple-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center m-2 sm:m-3"
