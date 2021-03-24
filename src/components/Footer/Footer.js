@@ -19,7 +19,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className="h-auto flex flex-row justify-center items-center address">
+      <div className="flex flex-row w-full justify-center items-center address bottom-0">
         <iframe
           className="w-5/12 m-20"
           width="100%"

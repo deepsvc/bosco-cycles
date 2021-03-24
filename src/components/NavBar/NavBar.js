@@ -118,7 +118,7 @@ class NavBar extends Component {
             <div className="my-4 flex flex-col items-center">
               <>
                 <div className="w-full text-center px-4 flex flex-col">
-                <a aria-current="page" href="/#about">
+                  <a aria-current="page" href="/#about">
                     <div className={smallScreenMenuStyle}>About Us</div>
                   </a>
 

@@ -10,6 +10,7 @@ import "./App.css";
 import "./index.css";
 import "./assets/css/tailwind.css";
 import About from "./components/About/About";
+import SpecificServiceDetails from "./containers/SpecificServiceDetails/SpecificServiceDetails";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/FAQ" exact component={FAQ} />
+          <Route path="/BrakeBleeding" exact component={(props) => <SpecificServiceDetails service="brake"  {...props} />} />
           {/* <Route path="/#about" component={About} /> */}
           {/* <Route path="/book" exact component={ServiceScreen} />
           <Route path="/BookDoorStep" exact component={ServiceScreenDoorStep} />
