@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class SpecificServices extends Component {
-
   render() {
     return (
       <div className="h-auto flex pt-20 flex-col items-center">
@@ -16,13 +15,23 @@ class SpecificServices extends Component {
                 <div className="gifHolder g4 shadow-xl"></div>
                 <div className="2xl:text-2xl text-xl py-10 font-semibold">
                   BRAKE BLEEDING
+                  <span className="text-lg text-red-600">
+                    <br />
+                    Read More
+                  </span>
                 </div>
               </div>
             </Link>
             <Link to="/WheelTuring">
               <div>
                 <div className="gifHolder g2 shadow-xl"></div>
-                <div className="2xl:text-2xl text-xl py-10 font-semibold">WHEEL TRUING</div>
+                <div className="2xl:text-2xl text-xl py-10 font-semibold">
+                  WHEEL TRUING
+                  <span className="text-lg text-red-600">
+                    <br />
+                    Read More
+                  </span>
+                </div>
               </div>
             </Link>
             <Link to="/SuspensionService">
@@ -30,6 +39,10 @@ class SpecificServices extends Component {
                 <div className="gifHolder g3 shadow-xl"></div>
                 <div className="2xl:text-2xl text-xl py-10 font-semibold">
                   SUSPENSION SERVICE
+                  <span className="text-lg text-red-600">
+                    <br />
+                    Read More
+                  </span>
                 </div>
               </div>
             </Link>
@@ -38,6 +51,10 @@ class SpecificServices extends Component {
                 <div className="gifHolder g1 shadow-xl"></div>
                 <div className="2xl:text-2xl text-xl py-10 font-semibold">
                   DRIVE TRAIN SERVICE
+                  <span className="text-lg text-red-600">
+                    <br />
+                    Read More
+                  </span>
                 </div>
               </div>
             </Link>

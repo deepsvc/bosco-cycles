@@ -40,14 +40,14 @@ class NavBar extends Component {
     };
 
     var DoorStep = {
-      marginTop: "-420px",
+      marginTop: "-350px",
       minWidth: "350px",
       maxWidth: "350px",
       left: "60%",
     };
 
     var CollectDrop = {
-      marginTop: "-420px",
+      marginTop: "-350px",
       minWidth: "350px",
       maxWidth: "700px",
       left: "55%",
