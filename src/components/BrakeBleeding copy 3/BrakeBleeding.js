@@ -5,7 +5,9 @@ import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 
 function BrakeBleeding() {
-  window.scrollTo(0, 0)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+}, []);
   return (
     <>
       <NavBar />
