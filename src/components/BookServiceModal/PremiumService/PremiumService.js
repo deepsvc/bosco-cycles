@@ -16,26 +16,21 @@ function PremiumService() {
 
       {/* For Normal Screens */}
       <div
-        style={{ height: "65vh" }}
-        className="hidden md:flex md:flex-col content px-3 overflow-auto"
+        style={{ height: "60vh" }}
+        className="hidden md:flex md:flex-col text-left text-xs content px-3 overflow-auto"
       >
         <p className="font-semibold py-2"> Recommended for Regular Riders</p>
-        <p className="text-sm py-2 text-left">
+        <p className="pb-2">
           Get your bike looking new and running smooth ! 6 months once would be
           an ideal time.
         </p>
-        <p className="text-sm py-2 text-left">
+        <p className="pb-2">
           We pick up your bike, Service it and drop it back in mint condition.
           Pickup and drop charges included.
         </p>
 
-        <div style={{ textAlign: "left" }}>
-          <p
-            style={{
-              fontStyle: "italic",
-              fontWeight: "600",
-            }}
-          >
+        <div className="pt-5 font-semibold pl-5">
+          <p className="font-bold">
             This service includes all elements of Regular Service +
           </p>
           <span style={{ color: "red" }}>»</span> Full Frame & Fork Clean

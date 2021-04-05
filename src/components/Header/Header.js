@@ -7,9 +7,10 @@ import "video-react/dist/video-react.css";
 import { Link } from "react-router-dom";
 
 import vid from "../../assets/images/vid1.mp4";
-import image1 from "../../assets/images/Header-image.jpg";
-import image2 from "../../assets/images/Header-image-2.jpg";
-import image3 from "../../assets/images/Header-image-3.jpg";
+import vidPhone from "../../assets/images/vid-phone.mp4";
+import image1 from "../../assets/images/header-1.jpg";
+import image2 from "../../assets/images/header-2.jpg";
+import image3 from "../../assets/images/header-3.jpg";
 
 import smimage1 from "../../assets/images/HeaderSM-1.jpg";
 import smimage2 from "../../assets/images/HeaderSM-2.jpg";
@@ -37,7 +38,7 @@ class Header extends Component {
           useKeyboardArrows={true}
           showThumbs={false}
         >
-          <div className="object-cover">
+          {/* <div className="object-cover">
             <Player
               loop={true}
               playsInline
@@ -48,7 +49,7 @@ class Header extends Component {
               <source src={vid} />
               <ControlBar autoHide={true} />
             </Player>
-          </div>
+          </div> */}
           <div>
             <img src={image1} />
           </div>
@@ -70,7 +71,7 @@ class Header extends Component {
           useKeyboardArrows={true}
           showThumbs={false}
         >
-          {/* <div className="object-cover">
+          <div className="object-cover">
             <Player
               loop={true}
               playsInline
@@ -78,10 +79,10 @@ class Header extends Component {
               muted
               bigPlayButton={false}
             >
-              <source src={vid} />
+              <source src={vidPhone} />
               <ControlBar autoHide={true} />
             </Player>
-          </div> */}
+          </div>
           <div>
             <img src={smimage1} />
           </div>

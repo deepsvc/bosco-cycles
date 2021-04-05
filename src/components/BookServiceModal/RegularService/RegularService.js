@@ -16,40 +16,28 @@ function RegularService() {
 
       {/* For Normal Screens */}
       <div
-        style={{ height: "65vh" }}
-        className="hidden md:flex md:flex-col content px-3 overflow-auto"
+        style={{ height: "60vh" }}
+        className="hidden text-xs text-left md:flex md:flex-col content px-3 overflow-auto"
       >
         <p className="font-semibold py-2">Recommended for Occasional Riders.</p>
-        <p className="text-sm pb-2 text-left">
+        <p className="pb-2">
           Get your bike looking new and running smooth! Once in 6 months would
           be an ideal time.
         </p>
-        <p className="text-sm pb-2 text-left">
-          We pick up your bike, Service it and drop it back in mint condition.
-          Pickup and drop charges included.
-        </p>
-        <p className="text-sm pb-2 text-left">
+        <p className="pb-2">
           A Quick tune-up which covers all the basic checks to keep you on the
           move!
         </p>
-        <p className="customPBold">
+        <p className="font-bold">
           Our Trusted technician will drop-In and service your bicycle.{" "}
         </p>
-        <div style={{ textAlign: "left", paddingLeft: "10px" }}>
-          <p
-            style={{
-              color: "rgb(234, 13, 41)",
-              fontSize: "1.25rem",
-              fontWeight: "900",
-            }}
-          >
-            What all is done?
-          </p>
+        <div className="pt-5 font-semibold pl-5">
+          <p className="text-sm font-bold text-red-600">What all is done?</p>
           <span style={{ color: "red" }}>»</span> All bolts checked and torqued
           <br />
           <span
             style={{
-              fontSize: "0.85rem",
+              fontSize: "0.65rem",
               paddingLeft: "10px",
             }}
           >

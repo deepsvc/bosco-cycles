@@ -351,8 +351,8 @@ input:focus {
 .gifHolder {
   background-position: center;
   background-size: cover;
-  height: 15rem;
-  width: 15rem;
+  height: 12rem;
+  width: 12rem;
   border-radius: 50%;
   background-color: rgb(237, 237, 237);
 }

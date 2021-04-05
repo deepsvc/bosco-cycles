@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import { Carousel } from "react-responsive-carousel";
 
 class Testimonial extends Component {
-
   render() {
     return (
       <div className="h-auto bg-gray-100 z-0 shadow-inner flex flex-col items-center">
-        <h1 className="text-red-600 pt-20 text-5xl font-extrabold uppercase">
+        <h1 className="text-red-600 pt-10 text-4xl 2xl:text-5xl font-extrabold uppercase">
           Testimonial
         </h1>
         <div className="lg:w-3/4 w-11/12">
@@ -18,6 +17,7 @@ class Testimonial extends Component {
             stopOnHover={false}
             useKeyboardArrows={true}
             showThumbs={false}
+            dynamicHeight={true}
           >
             <div>
               <p className="italic font-normal">
@@ -55,6 +55,9 @@ class Testimonial extends Component {
                 rides.
               </p>
               <h5 className="pt-5 font-semibold">- Peter Punith</h5>
+              <br />
+              <br />
+              <br />
             </div>
             <div>
               <p className="italic font-normal">
@@ -68,6 +71,9 @@ class Testimonial extends Component {
                 <br /> And they also pickup and drop facility!
               </p>
               <h5 className="pt-5 font-semibold">- Mathew</h5>
+              <br />
+              <br />
+              <br />
             </div>
             <div>
               <p className="italic font-normal">
@@ -86,6 +92,9 @@ class Testimonial extends Component {
                 <br /> With Stanly, quick work and good value. Highly recommend.
               </p>
               <h5 className="pt-5 font-semibold">- Ravi Kittu</h5>
+              <br />
+              <br />
+              <br />
             </div>
             <div>
               <p className="italic font-normal">
@@ -94,6 +103,9 @@ class Testimonial extends Component {
                 experience working within the bicycle industry for many years.
               </p>
               <h5 className="pt-5 font-semibold">- Mathew James</h5>
+              <br />
+              <br />
+              <br />
             </div>
             <div>
               <p className="italic font-normal">
@@ -102,6 +114,9 @@ class Testimonial extends Component {
                 <br /> Try his services and you'll never regret 👍🏽
               </p>
               <h5 className="pt-5 font-semibold">- Maria Precina</h5>
+              <br />
+              <br />
+              <br />
             </div>
             <div>
               <p className="italic font-normal">
@@ -109,6 +124,9 @@ class Testimonial extends Component {
                 smooth after 700kms !
               </p>
               <h5 className="pt-5 font-semibold">- Nishanth N</h5>
+              <br />
+              <br />
+              <br />
             </div>
             <div>
               <p className="italic font-normal">
@@ -116,6 +134,9 @@ class Testimonial extends Component {
                 an 100 percent blissfull experience with it!!!!
               </p>
               <h5 className="pt-5 font-semibold">- Anto Lenin</h5>
+              <br />
+              <br />
+              <br />
             </div>
           </Carousel>
         </div>

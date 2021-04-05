@@ -88,7 +88,7 @@ class Contact extends Component {
         id="contact"
       >
         <div className="lg:w-5/12 w-4/5">
-          <h1 className="text-white pt-20 text-3xl font-semibold uppercase">
+          <h1 className="text-white pt-10 text-3xl font-semibold uppercase">
             Make an Enquiry
           </h1>
           <form
@@ -132,9 +132,9 @@ class Contact extends Component {
             />
 
             <input
-              className="my-5 py-2 px-2 w-1/4 bg-red-600 rounded text-white text-xl"
+              className="my-5 py-2 px-12 bg-red-600 rounded text-white text-xl"
               type="submit"
-              value="Submit"
+              value="Send Message"
             />
           </form>
         </div>

@@ -1,38 +1,60 @@
 import React, { Component } from "react";
 
-class About extends Component {
+import image1 from "../../assets/images/ardent-content.png";
 
+class About extends Component {
   render() {
     return (
       <>
-        <div className="text-left ml-10 md:ml-40 2xl:ml-80 w-10/12 md:w-8/12 mb-28" id="about">
-          <div>
-            <p className="text-2xl italic">
-              We are Ardent Lovers of the Humble Bicycle!
-            </p>
-            <p className="text-2xl italic">
-              We are genuine fast track service provider.
-            </p>
-            <p className="text-2xl italic">
-              We Understand the hassle of getting bicycle serviced. From taking
-              your bike to a workshop and the long waiting time.
-            </p>
-            <p className="text-2xl italic">
-              We are here to make sure you get the best of our service at your
-              doorstep thereby saving time and also letting you observe the
-              complete process.
-            </p>
-            <p className="text-2xl italic">
-              We cater to all kinds of Bicycles!
-            </p>
-            <p className="text-2xl italic">
-              Whether you're a kid riding your bicycle to school, a commuter
-              nipping through traffic, a roadie who does long rides or a
-              mountain biker who hits the trails!
-            </p>
-            <p className="text-2xl italic">
-              WE ARE HERE TO CATER FOR YOUR NEEDS!
-            </p>
+        <div
+          className="text-left flex justify-center bg-gray-200 shadow-inner"
+          id="about"
+        >
+          <div className="md:w-4/5 m-5">
+            <h1 className="text-red-600 text-center lg:hidden text-4xl my-5 font-extrabold uppercase">
+              About Us
+            </h1>
+            <div className="col-span-2 md:hidden">
+              <img className="" src={image1} />
+            </div>
+            <div className="flex items-center">
+              <div className="flex flex-col">
+                <div className="items-center grid md:grid-cols-5 gap-4 md:gap-0 flex flex-col md:flex-row">
+                  <div className="hidden md:flex col-span-2">
+                    <img className="" src={image1} />
+                  </div>
+                  <div className="col-span-3 flex flex-col text-left">
+                    <p className="text-lg italic pb-2">
+                      <span className="font-bold">W</span>e are Ardent Lovers of
+                      the Humble Bicycle!
+                    </p>
+                    <p className="text-lg italic pb-2">
+                      We are genuine fast track service provider.
+                    </p>
+                    <p className="text-lg italic pb-2">
+                      We Understand the hassle of getting bicycle serviced. From
+                      taking your bike to a workshop and the long waiting time.
+                    </p>
+                    <p className="text-lg italic pb-2">
+                      We are here to make sure you get the best of our service
+                      at your doorstep thereby saving time and also letting you
+                      observe the complete process.
+                    </p>
+                    <p className="text-lg italic pb-2">
+                      We cater to all kinds of Bicycles!
+                    </p>
+                    <p className="text-lg italic pb-2">
+                      Whether you're a kid riding your bicycle to school, a
+                      commuter nipping through traffic, a roadie who does long
+                      rides or a mountain biker who hits the trails!
+                    </p>
+                    <p className="text-lg italic pb-2">
+                      WE ARE HERE TO CATER FOR YOUR NEEDS!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </>
