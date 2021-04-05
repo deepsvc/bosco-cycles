@@ -31,6 +31,8 @@ class NavBar extends Component {
   render() {
     const smallScreenMenuStyle =
       "border pl-4 p-2 my-2 text-gray-50 text-xl font-bold hover:text-red-500";
+    const smallScreenMenuStyleButton =
+      "border pl-4 p-2 my-2 text-gray-50 text-xl bg-red-600 font-bold hover:text-red-500";
     const bigScreenMenuStyle =
       "block text-gray-50 text-md font-bold ml-auto px-6 py-6 hover:text-red-500 hover:text-xl";
 
@@ -40,17 +42,22 @@ class NavBar extends Component {
     };
 
     var DoorStep = {
-      marginTop: "-25%",
+      marginTop: "-23%",
       minWidth: "350px",
       maxWidth: "350px",
       left: "60%",
     };
 
     var CollectDrop = {
-      marginTop: "-25%",
+      marginTop: "-23%",
       minWidth: "350px",
       maxWidth: "700px",
-      left: "55%",
+      left: "50%",
+    };
+
+    var PaintJob = {
+      minHeight: "150px",
+      maxHeight: "320px",
     };
 
     return (
@@ -58,7 +65,9 @@ class NavBar extends Component {
         <nav className="flex-grow w-full bg-gray-200 opc h-auto shadow-md fixed Graphik-Regular-Web z-10">
           <div className="flex justify-around items-center">
             <div className="w-40">
-              <img tabIndex="0" alt="Accenture Logo" src={logo} />
+              <a aria-current="page" href="/">
+                <img tabIndex="0" alt="Accenture Logo" src={logo} />
+              </a>
             </div>
 
             {/* NavBar on Regular Sized Screens */}
@@ -118,11 +127,19 @@ class NavBar extends Component {
             <div className="my-4 flex flex-col items-center">
               <>
                 <div className="w-full text-center px-4 flex flex-col">
-                  <a aria-current="page" href="/#about">
+                  <a
+                    onClick={this.handleClick.bind(this)}
+                    aria-current="page"
+                    href="/#about"
+                  >
                     <div className={smallScreenMenuStyle}>About Us</div>
                   </a>
 
-                  <a aria-current="page" href="/#service">
+                  <a
+                    onClick={this.handleClick.bind(this)}
+                    aria-current="page"
+                    href="/#service"
+                  >
                     <div className={smallScreenMenuStyle}>Services</div>
                   </a>
 
@@ -134,21 +151,23 @@ class NavBar extends Component {
                   >
                     FAQs
                   </NavLink>
-                  <div>
-                    <button
-                      className="bg-red-600 text-gray-50 font-bold rounded border-b-2 border-purple-300 hover:bg-purple-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center m-2 sm:m-3"
-                      onClick={() => this.simpleDialog.show()}
-                    >
-                      <span>Book A Service</span>
-                    </button>
-                  </div>
+
+                  <button
+                    className={smallScreenMenuStyleButton}
+                    onClick={() => {
+                      this.handleClick();
+                      this.simpleDialog.show();
+                    }}
+                  >
+                    <span>Book A Service</span>
+                  </button>
                 </div>
 
                 {/* NavBar Close Button */}
                 <div className="pt-5 text-center">
                   <button
                     onClick={this.handleClick.bind(this)}
-                    className="text-gray-800"
+                    className="text-gray-100"
                   >
                     <svg
                       className="w-full fill-current h-10 items-center"
@@ -165,6 +184,7 @@ class NavBar extends Component {
           </div>
         </nav>
 
+        {/* Main Modal */}
         <SkyLight
           hideOnOverlayClicked
           dialogStyles={MainModal}
@@ -220,6 +240,7 @@ class NavBar extends Component {
           </button>
         </SkyLight>
 
+        {/* Door Step Service */}
         <SkyLight
           hideOnOverlayClicked
           dialogStyles={DoorStep}
@@ -236,6 +257,7 @@ class NavBar extends Component {
           <RegularService />
         </SkyLight>
 
+        {/* Pick and Drop Service */}
         <SkyLight
           hideOnOverlayClicked
           dialogStyles={CollectDrop}
@@ -260,6 +282,38 @@ class NavBar extends Component {
               }}
             ></div>
             <UltimateStrip />
+          </div>
+        </SkyLight>
+
+        {/* Custom Paint Job */}
+        <SkyLight
+          hideOnOverlayClicked
+          dialogStyles={PaintJob}
+          ref={(ref) => (this.simpleDialog3 = ref)}
+        >
+          <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
+            Custom Paint Job
+          </div>
+          <div className="pb-2">
+            <span className="underline1"></span>
+          </div>
+          <div className="p-3">
+            <p>Are you looking to spruce up the appearance of your bike? </p>
+            <p>
+              What if we told you, you can see your bike in that colour you have
+              always dreamt of?
+            </p>
+            <p> You have definitely reached the right place to get it done.</p>
+          </div>
+          <div className="pb-2">
+            <span className="underline1"></span>
+          </div>
+          <div className="">
+            <NavLink to="/BookPaintJob">
+              <h1 className="text-white font-bold object-bottom p-2 text-2xl bg-gray-900">
+                BOOK SERVICE
+              </h1>
+            </NavLink>
           </div>
         </SkyLight>
       </div>

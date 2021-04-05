@@ -24,7 +24,7 @@ function BrakeBleeding() {
           us what fluid needs to be used. Re-bleeding will Extend the life of
           your brakes and keep it performing like new.{" "}
         </div>
-        <a href="/#service">
+        <a href="/BookBrakeBleeding">
           <button
             type="button"
             className="my-5 py-2 px-4 bg-red-600 rounded text-white font-bold text-xl hover:text-gray-800 hover:bg-red-200 hover:shadow"

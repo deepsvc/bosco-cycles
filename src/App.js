@@ -11,6 +11,7 @@ import "./index.css";
 import "./assets/css/tailwind.css";
 import About from "./components/About/About";
 import SpecificServiceDetails from "./containers/SpecificServiceDetails/SpecificServiceDetails";
+import SimpleForm from "./containers/SimpleForm/SimpleForm";
 
 function App() {
   return (
@@ -24,6 +25,11 @@ function App() {
           <Route path="/WheelTuring" exact component={(props) => <SpecificServiceDetails service="wheel"  {...props} />} />
           <Route path="/SuspensionService" exact component={(props) => <SpecificServiceDetails service="suspension"  {...props} />} />
           <Route path="/DriveTrainService" exact component={(props) => <SpecificServiceDetails service="drive"  {...props} />} />
+          <Route path="/BookPaintJob" exact component={(props) => <SimpleForm form="book custom paint job" {...props} /> }/>
+          <Route path="/BookBrakeBleeding" exact component={(props) => <SimpleForm form="book brake bleeding service" {...props} /> }/>
+          <Route path="/BookWheelTuring" exact component={(props) => <SimpleForm form="book Wheel Turing Service" {...props} /> }/>
+          <Route path="/BookSuspensionService" exact component={(props) => <SimpleForm form="book Suspension Service" {...props} /> }/>
+          <Route path="/BookDriveTrainService" exact component={(props) => <SimpleForm form="book Drive Train Service" {...props} /> }/>
           {/* <Route path="/#about" component={About} /> */}
           {/* <Route path="/book" exact component={ServiceScreen} />
           <Route path="/BookDoorStep" exact component={ServiceScreenDoorStep} />

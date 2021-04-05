@@ -21,7 +21,7 @@ function SuspensionService() {
           the lowers, give it a nice wash, lubricate the necessary parts and
           leave it feeling fresh and nice again.{" "}
         </div>
-        <a href="/#service">
+        <a href="/BookSuspensionService">
           <button
             type="button"
             className="my-5 py-2 px-4 bg-red-600 rounded text-white font-bold text-xl hover:text-gray-800 hover:bg-red-200 hover:shadow"

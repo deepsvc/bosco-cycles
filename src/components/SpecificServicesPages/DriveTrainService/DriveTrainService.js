@@ -22,7 +22,7 @@ function DriveTrainService() {
           the parts which needs replacement and assemble it back together and
           lubricate it once on the bike.{" "}
         </div>
-        <a href="/#service">
+        <a href="/BookDriveTrainService">
           <button
             type="button"
             className="my-5 py-2 px-4 bg-red-600 rounded text-white font-bold text-xl hover:text-gray-800 hover:bg-red-200 hover:shadow"

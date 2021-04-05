@@ -461,3 +461,18 @@ input:focus {
   -ms-transform: scale(1, 1.3); /* IE 9+ */
   -o-transform: scale(1, 1.3); /* Opera */
 }
+
+
+.underline2 {
+  display: block;
+  height: 1px;
+  background: -webkit-gradient(
+    radial,
+    50% 50%,
+    0,
+    50% 50%,
+    350,
+    from(rgb(255, 255, 255)),
+    to(rgb(220, 1, 1))
+  );
+}

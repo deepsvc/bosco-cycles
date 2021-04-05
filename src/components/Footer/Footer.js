@@ -48,9 +48,9 @@ class Footer extends Component {
             </h5>
           </div>
 
-          <div className="my-5 md:mr-48 rounded-2xl"
-            style={{ border: "0.01rem solid white"}}
-          ></div>
+          <div className="my-5 md:mr-32">
+            <span className="underline2"></span>
+          </div>
 
           <div className="my-5 flex flex-row">
             <div className="mr-6 text-white hover:shadow-xl hover:text-red-200">
