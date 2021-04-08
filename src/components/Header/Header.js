@@ -6,7 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 import "video-react/dist/video-react.css";
 import { Link } from "react-router-dom";
 
-import vid from "../../assets/images/vid1.mp4";
+import vid from "../../assets/images/vid-pc.mp4";
 import vidPhone from "../../assets/images/vid-phone.mp4";
 import image1 from "../../assets/images/header-1.jpg";
 import image2 from "../../assets/images/header-2.jpg";
@@ -38,7 +38,7 @@ class Header extends Component {
           useKeyboardArrows={true}
           showThumbs={false}
         >
-          {/* <div className="object-cover">
+          <div className="object-cover">
             <Player
               loop={true}
               playsInline
@@ -49,7 +49,7 @@ class Header extends Component {
               <source src={vid} />
               <ControlBar autoHide={true} />
             </Player>
-          </div> */}
+          </div>
           <div>
             <img src={image1} />
           </div>

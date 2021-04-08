@@ -13,13 +13,13 @@ class Footer extends Component {
     return (
       <div className="flex lg:flex-row flex-col w-full justify-center items-center address">
         <iframe
-          className="lg:w-5/12 w-4/5 h-60 md:h-72 m-5 lg:mx-20"
+          className="lg:w-96 w-4/5 h-60 md:h-72 m-5 md:my-7 md:mr-20 lg:ml-20"
           width="100%"
           scrolling="no"
           src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Yelahanka,bangalore+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         ></iframe>
 
-        <div className="lg:w-5/12 w-4/5 text-left">
+        <div className="lg:w-96 w-4/5 text-left lg:mr-20">
           <span className="text-xl md:text-3xl text-white font-bold">
             REACH US AT
           </span>
@@ -48,7 +48,7 @@ class Footer extends Component {
             </h5>
           </div>
 
-          <div className="my-5 md:mr-32">
+          <div className="my-5">
             <span className="underline2"></span>
           </div>
 

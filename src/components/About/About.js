@@ -14,16 +14,16 @@ class About extends Component {
             <h1 className="text-red-600 text-center lg:hidden text-4xl my-5 font-extrabold uppercase">
               About Us
             </h1>
-            <div className="col-span-2 md:hidden">
+            <div className="col-span-2 flex justify-center mb-5 md:hidden">
               <img className="" src={image1} />
             </div>
             <div className="flex items-center">
               <div className="flex flex-col">
                 <div className="items-center grid md:grid-cols-5 gap-4 md:gap-0 flex flex-col md:flex-row">
-                  <div className="hidden md:flex col-span-2">
-                    <img className="" src={image1} />
+                  <div className="hidden flex justify-end md:flex col-span-2 mr-10">
+                    <img className="w-5/6" src={image1} />
                   </div>
-                  <div className="col-span-3 flex flex-col text-left">
+                  <div className="col-span-3 flex flex-col md:text-left text-center">
                     <p className="text-lg italic pb-2">
                       <span className="font-bold">W</span>e are Ardent Lovers of
                       the Humble Bicycle!
@@ -48,7 +48,7 @@ class About extends Component {
                       commuter nipping through traffic, a roadie who does long
                       rides or a mountain biker who hits the trails!
                     </p>
-                    <p className="text-lg italic pb-2">
+                    <p className="text-lg italic font-semibold pb-2">
                       WE ARE HERE TO CATER FOR YOUR NEEDS!
                     </p>
                   </div>

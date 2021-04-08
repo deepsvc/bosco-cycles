@@ -14,15 +14,15 @@ class Services extends Component {
   render() {
     return (
       <div className="lg:h-screen services items-center" id="service">
-        <div className="mt-20 mx-10 md:mx-48 2xl:mx-72">
+        <div className="mt-20 mx-10 md:mx-56 2xl:mx-80">
           <div className="flex lg:flex-row flex-col">
-            <div className="lg:mr-5 mb-5 transition duration-500 ease-in-out transform md:hover:scale-110 lg:mb-0 md:w-1/3 hover:bg-gray-50 hover:shadow-xl bg-white">
+            <div className="lg:mr-5 mb-5 transition duration-500 ease-in-out transform md:hover:mr-10 md:hover:scale-110 lg:mb-0 md:w-1/3 hover:bg-gray-50 hover:shadow-xl bg-white">
               <RegularService />
             </div>
-            <div className="lg:mr-5 mb-5 transition duration-500 ease-in-out transform md:hover:scale-110 lg:mb-0 md:w-1/3 hover:bg-gray-50 hover:shadow-xl bg-white">
+            <div className="lg:mr-5 mb-5 transition duration-500 ease-in-out transform md:hover:mr-10 md:hover:ml-5 md:hover:scale-110 lg:mb-0 md:w-1/3 hover:bg-gray-50 hover:shadow-xl bg-white">
               <PremiumService />
             </div>
-            <div className="mb-5 lg:mb-0 transition duration-500 ease-in-out transform md:hover:scale-110 md:w-1/3 hover:bg-gray-50 hover:shadow-xl bg-white">
+            <div className="mb-5 lg:mb-0 transition duration-500 ease-in-out transform md:hover:mr-10 md:hover:ml-5 md:hover:scale-110 md:w-1/3 hover:bg-gray-50 hover:shadow-xl bg-white">
               <UltimateStrip />
             </div>
           </div>

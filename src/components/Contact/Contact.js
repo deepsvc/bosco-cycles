@@ -82,13 +82,14 @@ class Contact extends Component {
   };
 
   render() {
+    const input_style = "placeholder-gray-500 bg-transparent border-solid border-opacity-80 border-2 border-gray-100 my-2 py-2 px-2 lg:w-3/4 w-11/12 rounded placeholder-opacity-50"
     return (
       <div
         className="flex lg:flex-row flex-col bg-gray-800 shadow-inner justify-center items-center"
         id="contact"
       >
         <div className="lg:w-5/12 w-4/5">
-          <h1 className="text-white pt-10 text-3xl font-semibold uppercase">
+          <h1 className="text-white md:pt-0 pt-5 text-3xl font-semibold uppercase">
             Make an Enquiry
           </h1>
           <form
@@ -96,7 +97,7 @@ class Contact extends Component {
             onSubmit={this.handleSubmit}
           >
             <input
-              className="placeholder-gray-500 my-5 py-2 px-2 lg:w-3/4 w-11/12 rounded placeholder-opacity-50"
+              className={input_style}
               type="text"
               name="name"
               value={this.state.name}
@@ -105,7 +106,7 @@ class Contact extends Component {
             />
 
             <input
-              className="placeholder-gray-500 my-5 py-2 px-2 lg:w-3/4 w-11/12 rounded placeholder-opacity-50"
+              className={input_style}
               type="text"
               name="phone"
               value={this.state.phone}
@@ -114,7 +115,7 @@ class Contact extends Component {
             />
 
             <input
-              className="placeholder-gray-500 my-5 py-2 px-2 lg:w-3/4 w-11/12 rounded placeholder-opacity-50"
+              className={input_style}
               type="text"
               name="email"
               value={this.state.email}
@@ -123,7 +124,7 @@ class Contact extends Component {
             />
 
             <textarea
-              className="placeholder-gray-500 my-5 py-2 px-2 lg:w-3/4 w-11/12 rounded placeholder-opacity-50"
+              className={input_style}
               type="text"
               name="message"
               value={this.state.message}
@@ -132,13 +133,13 @@ class Contact extends Component {
             />
 
             <input
-              className="my-5 py-2 px-12 bg-red-600 rounded text-white text-xl"
+              className="my-2 py-2 px-12 bg-red-600 rounded text-white text-xl"
               type="submit"
               value="Send Message"
             />
           </form>
         </div>
-        <div className="lg:w-5/12 w-4/5 lg:m-20 mt-5 mb-12">
+        <div className="lg:w-4/12 w-4/5 lg:m-5 mt-5 mb-7">
           <Player loop={true} playsInline autoPlay muted bigPlayButton={false}>
             <source src={vid} />
             <ControlBar autoHide={true} />

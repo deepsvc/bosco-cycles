@@ -1,23 +1,68 @@
 import React, { Component } from "react";
 import { Carousel } from "react-responsive-carousel";
 
+import left from "../../assets/images/left.png";
+import right from "../../assets/images/right.png";
+
 class Testimonial extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentSlide: 0,
+    };
+  }
+
+  next = () => {
+    this.setState((state) => ({
+      currentSlide: state.currentSlide + 1,
+    }));
+  };
+
+  prev = () => {
+    this.setState((state) => ({
+      currentSlide: state.currentSlide - 1,
+    }));
+  };
+
+  updateCurrentSlide = (index) => {
+    const { currentSlide } = this.state;
+
+    if (currentSlide !== index) {
+      this.setState({
+        currentSlide: index,
+      });
+    }
+  };
+
   render() {
     return (
       <div className="h-auto bg-gray-100 z-0 shadow-inner flex flex-col items-center">
         <h1 className="text-red-600 pt-10 text-4xl 2xl:text-5xl font-extrabold uppercase">
-          Testimonial
+          Testimonials
         </h1>
-        <div className="lg:w-3/4 w-11/12">
+
+        <div className="md:flex md:flex-row item-center lg:w-3/4 w-11/12">
+          <div className="hidden md:flex w-96 ">
+            <button onClick={this.prev}>
+              <img className="text-gray-800" src={left} />
+            </button>
+          </div>
+
           <Carousel
             className="py-10"
             autoPlay={true}
+            showArrows={false}
             interval={6000}
             infiniteLoop={true}
             stopOnHover={false}
             useKeyboardArrows={true}
             showThumbs={false}
             dynamicHeight={true}
+            showStatus={false}
+            selectedItem={this.state.currentSlide}
+            onChange={this.updateCurrentSlide}
+            {...this.props}
           >
             <div>
               <p className="italic font-normal">
@@ -139,6 +184,12 @@ class Testimonial extends Component {
               <br />
             </div>
           </Carousel>
+
+          <div className="hidden md:flex w-96">
+            <button onClick={this.next}>
+              <img className="" src={right} />
+            </button>
+          </div>
         </div>
       </div>
     );

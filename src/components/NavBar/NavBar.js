@@ -98,10 +98,10 @@ class NavBar extends Component {
 
                 <div>
                   <button
-                    className="bg-red-600 text-gray-50 font-bold rounded border-b-2 border-purple-300 hover:bg-purple-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center m-2 sm:m-3"
+                    className="bg-red-600 text-gray-50 font-bold rounded hover:bg-button-blue hover:text-black shadow-md py-2 px-2 sm:px-6 items-center m-2 sm:m-3"
                     onClick={() => this.simpleDialog.show()}
                   >
-                    <span>Book A Service</span>
+                    <span>Book Service</span>
                   </button>
                 </div>
               </div>
@@ -159,7 +159,7 @@ class NavBar extends Component {
                       this.simpleDialog.show();
                     }}
                   >
-                    <span>Book A Service</span>
+                    <span>Book Service</span>
                   </button>
                 </div>
 
@@ -191,7 +191,7 @@ class NavBar extends Component {
           ref={(ref) => (this.simpleDialog = ref)}
         >
           <div className="text-4xl divide-y divide-fuchsia-300 font-medium pb-2">
-            Book A Service
+            Book Service
           </div>
 
           <div>

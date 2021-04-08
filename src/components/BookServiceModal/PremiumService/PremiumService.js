@@ -29,7 +29,7 @@ function PremiumService() {
           Pickup and drop charges included.
         </p>
 
-        <div className="pt-5 font-semibold pl-5">
+        <div className="pt-5 font-semibold pl-5 italic">
           <p className="font-bold">
             This service includes all elements of Regular Service +
           </p>

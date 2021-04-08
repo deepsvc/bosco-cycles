@@ -34,7 +34,7 @@ function UltimateStrip() {
           Pickup and Drop charges included.
         </p>
 
-        <div className="pt-3 font-semibold">
+        <div className="pt-3 font-semibold italic">
           <p className="font-bold">
             This includes all elements of Premium Service +
           </p>

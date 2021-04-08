@@ -10,7 +10,7 @@ function RegularService() {
         <h1 className="serviceName text-2xl py-2">REGULAR SERVICE</h1>
       </div>
       <h1 className="text-white font-semibold p-1 text-3xl bg-gray-900">
-        700/-*
+        650/-*
       </h1>
       <span className="text-xs">Price is Inclusive of GST</span>
 
@@ -31,7 +31,7 @@ function RegularService() {
         <p className="font-bold">
           Our Trusted technician will drop-In and service your bicycle.{" "}
         </p>
-        <div className="pt-5 font-semibold pl-5">
+        <div className="pt-5 font-semibold pl-5 italic">
           <p className="text-sm font-bold text-red-600">What all is done?</p>
           <span style={{ color: "red" }}>»</span> All bolts checked and torqued
           <br />
