@@ -21,6 +21,10 @@ class SimpleForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   handleChange = (event) => {
     const validEmailRegex = RegExp(
       /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -151,7 +155,7 @@ class SimpleForm extends Component {
               </h6>
 
               <input
-                className="hover:shadow-md hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 uppercase bg-red-600 rounded text-white text-xl"
+                className="hover:shadow-md hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
                 type="submit"
                 value={("Book", this.props.form)}
               />

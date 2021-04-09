@@ -36,9 +36,21 @@ class NavBar extends Component {
     const bigScreenMenuStyle =
       "block text-gray-50 text-md font-bold ml-auto px-6 py-6 hover:text-red-500 hover:text-xl";
 
+    var OverLayStyle = {
+      backgroundColor: "rgba(0,0,0,0.9)",
+    };
+
     var MainModal = {
       minHeight: "150px",
       maxHeight: "320px",
+    };
+
+    var MainModalMob = {
+      minHeight: "150px",
+      maxHeight: "400px",
+      left: "15%",
+      marginLeft: "0%",
+      width: "70%",
     };
 
     var DoorStep = {
@@ -57,7 +69,17 @@ class NavBar extends Component {
 
     var PaintJob = {
       minHeight: "150px",
-      maxHeight: "320px",
+      maxHeight: "500px",
+    };
+
+    var DoorStepMob = {
+      minWidth: "350px",
+      maxWidth: "350px",
+      left: "15%",
+      marginLeft: "0%",
+      width: "50%",
+      top: "5%",
+      marginTop: "0%",
     };
 
     return (
@@ -156,7 +178,7 @@ class NavBar extends Component {
                     className={smallScreenMenuStyleButton}
                     onClick={() => {
                       this.handleClick();
-                      this.simpleDialog.show();
+                      this.simpleDialogMob.show();
                     }}
                   >
                     <span>Book Service</span>
@@ -187,6 +209,7 @@ class NavBar extends Component {
         {/* Main Modal */}
         <SkyLight
           hideOnOverlayClicked
+          overlayStyles={OverLayStyle}
           dialogStyles={MainModal}
           ref={(ref) => (this.simpleDialog = ref)}
         >
@@ -242,6 +265,7 @@ class NavBar extends Component {
 
         {/* Door Step Service */}
         <SkyLight
+          overlayStyles={OverLayStyle}
           hideOnOverlayClicked
           dialogStyles={DoorStep}
           ref={(ref) => (this.simpleDialog1 = ref)}
@@ -259,6 +283,35 @@ class NavBar extends Component {
 
         {/* Pick and Drop Service */}
         <SkyLight
+          overlayStyles={OverLayStyle}
+          hideOnOverlayClicked
+          dialogStyles={CollectDrop}
+          ref={(ref) => (this.simpleDialog2 = ref)}
+        >
+          <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
+            Collect & Drop Service
+          </div>
+
+          <div className="pb-2">
+            <span className="underline1"></span>
+          </div>
+          <div className="grid grid-flow-col">
+            <PremiumService />
+            <div
+              style={{
+                borderLeft: "2px solid grey",
+                height: "100%",
+                position: "relative",
+                left: "50%",
+                top: "0",
+              }}
+            ></div>
+            <UltimateStrip />
+          </div>
+        </SkyLight>
+
+        <SkyLight
+          overlayStyles={OverLayStyle}
           hideOnOverlayClicked
           dialogStyles={CollectDrop}
           ref={(ref) => (this.simpleDialog2 = ref)}
@@ -287,14 +340,15 @@ class NavBar extends Component {
 
         {/* Custom Paint Job */}
         <SkyLight
+          overlayStyles={OverLayStyle}
           hideOnOverlayClicked
           dialogStyles={PaintJob}
           ref={(ref) => (this.simpleDialog3 = ref)}
         >
-          <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
-            Custom Paint Job
+          <div className="heading text-2xl divide-y divide-fuchsia-300 font-medium">
+            <h1 className="serviceName text-2xl py-2">Custom Paint Job</h1>
           </div>
-          <div className="pb-2">
+          <div className="py-2">
             <span className="underline1"></span>
           </div>
           <div className="p-3">
@@ -310,6 +364,207 @@ class NavBar extends Component {
           </div>
           <div className="">
             <NavLink to="/BookPaintJob">
+              <h1 className="text-white font-bold object-bottom p-2 text-2xl bg-gray-900">
+                BOOK SERVICE
+              </h1>
+            </NavLink>
+          </div>
+        </SkyLight>
+
+        {/* Modal for Mobile Screens */}
+        {/* Main Modal */}
+        <SkyLight
+          overlayStyles={OverLayStyle}
+          hideOnOverlayClicked
+          dialogStyles={MainModalMob}
+          ref={(ref) => (this.simpleDialogMob = ref)}
+        >
+          <div className>
+            <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
+              Book Service Mobile
+            </div>
+
+            <div>
+              <span className="underline1"></span>
+            </div>
+
+            <button
+              className="bg-red-600 w-full text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center my-2"
+              onClick={() => {
+                this.simpleDialogMob.hide();
+                this.simpleDialogMob1.show();
+              }}
+            >
+              Door Step Service
+            </button>
+
+            <button
+              className="bg-red-600 w-full text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center my-2"
+              onClick={() => {
+                this.simpleDialogOptionMob.show();
+                this.simpleDialogMob.hide();
+              }}
+            >
+              Collect & Return
+            </button>
+
+            <button
+              className="bg-red-600 w-full text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center my-2"
+              onClick={() => {
+                this.simpleDialogPaintJob.show();
+                this.simpleDialogMob.hide();
+              }}
+            >
+              Book Custom Paint Job
+            </button>
+
+            <div>
+              <span className="underline1"></span>
+            </div>
+
+            <button
+              className="bg-gray-50 text-gray-500 font-bold rounded border-b-2 border-gray-100 hover:bg-gray-200 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center m-2 sm:m-3"
+              onClick={() => this.simpleDialog.hide()}
+            >
+              Close
+            </button>
+          </div>
+        </SkyLight>
+        {/* Door Step Service */}
+        <SkyLight
+          overlayStyles={OverLayStyle}
+          hideOnOverlayClicked
+          dialogStyles={DoorStepMob}
+          ref={(ref) => (this.simpleDialogMob1 = ref)}
+        >
+          <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
+            Door Step Service
+          </div>
+
+          <div className="pb-2">
+            <span className="underline1"></span>
+          </div>
+
+          <RegularService />
+        </SkyLight>
+
+        {/* Option for Premium and Ultimate */}
+        <SkyLight
+          overlayStyles={OverLayStyle}
+          hideOnOverlayClicked
+          dialogStyles={MainModalMob}
+          ref={(ref) => (this.simpleDialogOptionMob = ref)}
+        >
+          <div className>
+            <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
+              Collect & Return Services
+            </div>
+
+            <div>
+              <span className="underline1"></span>
+            </div>
+
+            <button
+              className="bg-red-600 w-full text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center my-2"
+              onClick={() => {
+                this.simpleDialogMobPremium.show();
+                this.simpleDialogMob.hide();
+              }}
+            >
+              Premium Service
+            </button>
+
+            <button
+              className="bg-red-600 w-full text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center my-2"
+              onClick={() => {
+                this.simpleDialogUltimate.show();
+                this.simpleDialog.hide();
+              }}
+            >
+              Ultimate Strip
+            </button>
+
+            <div>
+              <span className="underline1"></span>
+            </div>
+
+            <button
+              className="bg-gray-50 text-gray-500 font-bold rounded border-b-2 border-gray-100 hover:bg-gray-200 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center m-2 sm:m-3"
+              onClick={() => this.simpleDialogOptionMob.hide()}
+            >
+              Close
+            </button>
+          </div>
+        </SkyLight>
+
+        {/* Pick and Drop Service */}
+        {/* Premium Service */}
+        <SkyLight
+          overlayStyles={OverLayStyle}
+          hideOnOverlayClicked
+          dialogStyles={DoorStepMob}
+          ref={(ref) => (this.simpleDialogMobPremium = ref)}
+        >
+          <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
+            Collect & Drop Service
+          </div>
+
+          <div className="pb-2">
+            <span className="underline1"></span>
+          </div>
+          <div className="grid grid-flow-col">
+            <PremiumService />
+          </div>
+        </SkyLight>
+
+        {/* Ultimate Strip */}
+        <SkyLight
+          overlayStyles={OverLayStyle}
+          hideOnOverlayClicked
+          dialogStyles={DoorStepMob}
+          ref={(ref) => (this.simpleDialogUltimate = ref)}
+        >
+          <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
+            Collect & Drop Service
+          </div>
+
+          <div className="pb-2">
+            <span className="underline1"></span>
+          </div>
+          <div className="grid grid-flow-col">
+            <UltimateStrip />
+          </div>
+        </SkyLight>
+
+        {/* Custom Paint Job */}
+        <SkyLight
+          overlayStyles={OverLayStyle}
+          hideOnOverlayClicked
+          dialogStyles={PaintJob}
+          ref={(ref) => (this.simpleDialogPaintJob = ref)}
+        >
+          <div className="heading text-2xl divide-y divide-fuchsia-300 font-medium">
+            <h1 className="serviceName text-2xl py-2">Custom Paint Job</h1>
+          </div>
+          <div className="py-2">
+            <span className="underline1"></span>
+          </div>
+          <div className="p-3">
+            <p>Are you looking to spruce up the appearance of your bike? </p>
+            <p>
+              What if we told you, you can see your bike in that colour you have
+              always dreamt of?
+            </p>
+            <p> You have definitely reached the right place to get it done.</p>
+          </div>
+          <div className="pb-2">
+            <span className="underline1"></span>
+          </div>
+          <div className="">
+            <NavLink
+              to="/BookPaintJob"
+              onClick={() => this.simpleDialogPaintJob.hide()}
+            >
               <h1 className="text-white font-bold object-bottom p-2 text-2xl bg-gray-900">
                 BOOK SERVICE
               </h1>
