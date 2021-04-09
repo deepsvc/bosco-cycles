@@ -88,7 +88,7 @@ class Contact extends Component {
         className="flex lg:flex-row flex-col bg-gray-800 shadow-inner justify-center items-center"
         id="contact"
       >
-        <div className="lg:w-5/12 w-4/5">
+        <div className="lg:w-5/12 w-4/5 md:my-5">
           <h1 className="text-white md:pt-0 pt-5 text-3xl font-semibold uppercase">
             Make an Enquiry
           </h1>

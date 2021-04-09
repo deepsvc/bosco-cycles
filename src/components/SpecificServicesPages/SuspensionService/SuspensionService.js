@@ -24,7 +24,7 @@ function SuspensionService() {
         <a href="/BookSuspensionService">
           <button
             type="button"
-            className="my-5 py-2 px-4 bg-red-600 rounded text-white font-bold text-xl hover:text-gray-800 hover:bg-red-200 hover:shadow"
+            className="my-5 py-2 px-4 bg-red-600 rounded text-white font-bold text-xl hover:bg-black hover:shadow"
           >
             BOOK SERVICE
           </button>

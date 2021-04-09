@@ -14,7 +14,7 @@ class HowItWorks extends Component {
   render() {
     return (
       <>
-        <div className="md:w-4/5 m-5 bg-gray-100 shadow-inner">
+        <div className="md:w-4/5 md:ml-16">
           <div className="flex lg:flex-row flex-col">
             <div className="hidden lg:flex flex-row items-center">
               <div className="bg-red-600 h-5/6 w-80 p-4 flex items-center text-center shadow-xl">
@@ -32,7 +32,7 @@ class HowItWorks extends Component {
               How it Works
             </h1>
 
-            <div className="flex items-center md:w-4/5 md:ml-20 mx-12 md:my-12">
+            <div className="flex items-center md:w-4/5 md:ml-20 mx-12 md:mt-5 xs:my-12">
               <div className="flex flex-col">
                 <div className="items-center grid grid-cols-5 gap-4 md:gap-0 flex flex-row pb-5">
                   <div className="col-span-1">

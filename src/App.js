@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Home from "./containers/Home/Home";
@@ -15,7 +15,7 @@ import SimpleForm from "./containers/SimpleForm/SimpleForm";
 
 function App() {
   return (
-    <div className="App" data-spy="scroll"> 
+    <div className="App" data-spy="scroll" data-target=".navbar"> 
       <BrowserRouter>
       <React.Suspense fallback={<Loading />}>
         <Switch>

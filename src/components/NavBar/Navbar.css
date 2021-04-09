@@ -19,8 +19,8 @@
 }
 
 .opc {
-  background-color: rgba(29, 29, 29, 0.7);
-  backdrop-filter: blur(10px);
+  background-color: rgb(17, 17, 17);
+  /* backdrop-filter: blur(10px); */
 }
 
 .underline1 {

@@ -17,7 +17,7 @@ function Home() {
       <div className="flex justify-center">
         <HowItWorks />
       </div>
-        <About />
+      <About />
       <Services />
       <SpecificServices />
       <Testimonial />
