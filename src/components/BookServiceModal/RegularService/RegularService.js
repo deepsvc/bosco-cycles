@@ -127,7 +127,7 @@ function RegularService() {
       </div>
 
       <div className="">
-        <Link to="/book">
+        <Link to="/BookRegularService">
           <h1 className="text-white font-bold p-2 bottom-0 text-2xl bg-gray-900">
             BOOK SERVICE
           </h1>

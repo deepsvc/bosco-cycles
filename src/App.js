@@ -9,9 +9,9 @@ import FAQ from "./containers/FAQ/FAQ"
 import "./App.css";
 import "./index.css";
 import "./assets/css/tailwind.css";
-import About from "./components/About/About";
 import SpecificServiceDetails from "./containers/SpecificServiceDetails/SpecificServiceDetails";
 import SimpleForm from "./containers/SimpleForm/SimpleForm";
+import MainForm from "./containers/MainForm/MainForm";
 
 function App() {
   return (
@@ -30,31 +30,9 @@ function App() {
           <Route path="/BookWheelTuring" exact component={(props) => <SimpleForm form="book Wheel Turing Service" {...props} /> }/>
           <Route path="/BookSuspensionService" exact component={(props) => <SimpleForm form="book Suspension Service" {...props} /> }/>
           <Route path="/BookDriveTrainService" exact component={(props) => <SimpleForm form="book Drive Train Service" {...props} /> }/>
-          {/* <Route path="/#about" component={About} /> */}
-          {/* <Route path="/book" exact component={ServiceScreen} />
-          <Route path="/BookDoorStep" exact component={ServiceScreenDoorStep} />
-          <Route path="/brakebleeding" exact component={BrakeBleeding} />
-
-          <Route path="/PaintJob" exact component={PaintJob} />
-          <Route path="/WheelTurning" exact component={WheelTurning} />
-          <Route
-            path="/SuspensionService"
-            exact
-            component={SuspensionService}
-          />
-          <Route
-            path="/DriveTrainService"
-            exact
-            component={DriveTrainService}
-          />
-          <Route path="/BrakeForm" exact component={BrakeForm} />
-          <Route path="/WheelTruingForm" exact component={WheelForm} />
-          <Route
-            path="/SuspensionServiceForm"
-            exact
-            component={SuspensionServiceForm}
-          />
-          <Route path="/DriveTrainForm" exact component={DriveForm} /> */}
+          <Route path="/BookRegularService" exact component={(props) => <MainForm form="DoorStep Regular Service" {...props} /> }/>
+          <Route path="/BookPremiumService" exact component={(props) => <MainForm form="Pick & Drop Premium Service" {...props} /> }/>
+          <Route path="/BookUltimateStrip" exact component={(props) => <MainForm form="Pick & Drop Ultimate Strip" {...props} /> }/>
           <Route component={NotFound} />
         </Switch>
         </React.Suspense>

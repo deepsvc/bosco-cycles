@@ -31,7 +31,8 @@ function UltimateStrip() {
 
         <p className="pb-2">
           We pick up your bike, Service it and drop it back in mint condition.
-          Pickup and Drop charges included.
+          <br />
+          **Pickup and drop charges extra.
         </p>
 
         <div className="pt-3 font-semibold italic">
@@ -86,7 +87,8 @@ function UltimateStrip() {
 
         <p className="text-sm pb-2 text-left">
           We pick up your bike, Service it and drop it back in mint condition.
-          Pickup and Drop charges included.
+          <br />
+          **Pickup and drop charges extra.
         </p>
 
         <div style={{ textAlign: "left" }}>
@@ -131,7 +133,7 @@ function UltimateStrip() {
         </div>
       </div>
       <div className="">
-        <Link to="/book">
+        <Link to="/BookUltimateStrip">
           <h1 className="text-white font-bold object-bottom p-2 text-2xl bg-gray-900">
             BOOK SERVICE
           </h1>

@@ -97,7 +97,7 @@ class SimpleForm extends Component {
     };
 
     const inputCSS =
-      "focus:placeholder-gray-200 focus:shadow-xl hover:shadow-md placeholder-gray-300 my-5 py-2 px-2 w-full border-solid border-2 border-red-200 border-opacity-100 rounded";
+      "focus:placeholder-gray-200 focus:shadow-xl hover:shadow-md placeholder-gray-300 my-5 py-2 px-2 border-solid border-2 border-red-200 border-opacity-100 rounded";
     return (
       <>
         <Navbar />

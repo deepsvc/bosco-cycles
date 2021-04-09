@@ -12,7 +12,7 @@ function PremiumService() {
       <h1 className="text-white font-semibold p-1 text-3xl bg-gray-900">
         1300/-*
       </h1>
-      <span className="text-xs">Price is Inclusive of GST</span>
+      <span className="text-xs">*Price is Inclusive of GST</span>
 
       {/* For Normal Screens */}
       <div
@@ -26,7 +26,8 @@ function PremiumService() {
         </p>
         <p className="pb-2">
           We pick up your bike, Service it and drop it back in mint condition.
-          Pickup and drop charges included.
+          <br />
+          **Pickup and drop charges extra.
         </p>
 
         <div className="pt-5 font-semibold pl-5 italic">
@@ -55,7 +56,8 @@ function PremiumService() {
         </p>
         <p className="text-sm py-2 text-left">
           We pick up your bike, Service it and drop it back in mint condition.
-          Pickup and drop charges included.
+          <br />
+          **Pickup and drop charges extra.
         </p>
         a
         <div style={{ textAlign: "left" }}>
@@ -81,7 +83,7 @@ function PremiumService() {
       </div>
 
       <div className="">
-        <Link to="/book">
+        <Link to="/BookPremiumService">
           <h1 className="text-white font-bold object-bottom p-2 text-2xl bg-gray-900">
             BOOK SERVICE
           </h1>
