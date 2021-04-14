@@ -11,14 +11,15 @@ class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: null,
-      email: null,
-      phone: null,
-      message: null,
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
       errors: {
-        name: "",
-        email: "",
-        phone: "",
+        name: "Name must be more than 2 characters!",
+        email: "Enter a vaild email address!",
+        phone: "Enter a vaild phone number!",
+        message: "Enter a vaild message!",
       },
     };
 
@@ -42,47 +43,93 @@ class Contact extends Component {
     switch (name) {
       case "name":
         errors.name =
-          value.length < 5 ? "Full Name must be 5 characters long!" : value;
+          value.length < 3 ? "Name must be more than 2 characters!" : "";
         break;
       case "email":
         errors.email = validEmailRegex.test(value)
-          ? value
-          : "Email is not valid!";
+          ? ""
+          : "Enter a vaild email address!";
         break;
       case "phone":
         errors.phone = validPhone.test(value)
-          ? value
-          : "Phone No is not valid!";
+          ? ""
+          : "Enter a vaild phone number!";
+        break;
+      case "message":
+        errors.message =
+          value.length < 5 ? "Message must be more than 5 characters!" : "";
         break;
       default:
         break;
     }
-
     this.setState({ errors, [name]: value }, () => {
       console.log(errors);
     });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     const validateForm = (errors) => {
       let valid = true;
-      Object.values(errors).forEach(
-        // if we have an error string set valid to false
-        (val) => val.length > 0 && (valid = false)
-      );
+      Object.keys(errors).forEach((key) => {
+        if (errors[key].length != 0 && valid === true) {
+          alert(errors[key]);
+          valid = false;
+        }
+      });
       return valid;
     };
 
     event.preventDefault();
     if (validateForm(this.state.errors)) {
+      let data = {
+        service_id: "service_6cbhpvh",
+        template_id: "template_reamh8x",
+        user_id: "user_vKlefJhUqLPGcgXQQQlrT",
+        template_params: {
+          formname: "Contact Form",
+          name: this.state.name,
+          phone: this.state.phone,
+          email: this.state.email,
+          message: this.state.message,
+        },
+      };
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      };
+      let response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        requestOptions
+      ).then((response) => {
+        return response;
+      });
+
+      if (response.status == 200) {
+        this.setState({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          errors: {
+            name: "Name must be more than 2 characters!",
+            email: "Enter a vaild email address!",
+            phone: "Enter a vaild phone number!",
+            message: "Enter a vaild message!",
+          },
+        });
+        alert("Form submitted successfully!");
+      }
       console.info("Valid Form");
     } else {
+      alert("Something went wrong, please try after sometime!");
       console.error("Invalid Form");
     }
   };
 
   render() {
-    const input_style = "placeholder-gray-500 bg-transparent border-solid border-opacity-80 border-2 border-gray-100 my-2 py-2 px-2 lg:w-3/4 w-11/12 rounded placeholder-opacity-50"
+    const input_style =
+      "placeholder-gray-200 bg-transparent border-solid border-opacity-80 border-2 text-white border-gray-100 my-2 py-2 px-2 lg:w-3/4 w-11/12 rounded placeholder-opacity-50";
     return (
       <div
         className="flex lg:flex-row flex-col bg-gray-800 shadow-inner justify-center items-center"
@@ -132,11 +179,13 @@ class Contact extends Component {
               onChange={(event) => this.handleChange(event, "message")}
             />
 
-            <input
-              className="my-2 py-2 px-12 bg-red-600 rounded text-white text-xl"
+            <button
+              className="my-2 py-2 px-12 bg-red-600 rounded hover:bg-black transition duration-500 ease-in-out transform md:hover:scale-105 hover:shadow-xl text-white text-xl"
               type="submit"
               value="Send Message"
-            />
+            >
+              Send Message
+            </button>
           </form>
         </div>
         <div className="lg:w-4/12 w-4/5 lg:m-5 mt-5 mb-7">

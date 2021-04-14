@@ -11,9 +11,6 @@ class About extends Component {
           id="about"
         >
           <div className="md:w-4/5 m-5">
-            <h1 className="text-red-600 text-center lg:hidden text-4xl my-5 font-extrabold uppercase">
-              About Us
-            </h1>
             <div className="col-span-2 flex justify-center mb-5 md:hidden">
               <img className="" src={image1} />
             </div>

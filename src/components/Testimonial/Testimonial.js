@@ -44,8 +44,8 @@ class Testimonial extends Component {
 
         <div className="md:flex md:flex-row item-center lg:w-3/4 w-11/12">
           <div className="hidden md:flex w-96 ">
-            <button onClick={this.prev}>
-              <img className="text-gray-800" src={left} />
+            <button className="focus:outline-none" onClick={this.prev}>
+              <img className="text-gray-800 opacity-50" src={left} />
             </button>
           </div>
 
@@ -186,8 +186,8 @@ class Testimonial extends Component {
           </Carousel>
 
           <div className="hidden md:flex w-96">
-            <button onClick={this.next}>
-              <img className="" src={right} />
+            <button className="focus:outline-none" onClick={this.next}>
+              <img className="opacity-50" src={right} />
             </button>
           </div>
         </div>

@@ -19,7 +19,7 @@ function PremiumService() {
         style={{ height: "60vh" }}
         className="hidden md:flex md:flex-col text-left text-xs content px-3 overflow-auto"
       >
-        <p className="font-semibold py-2"> Recommended for Regular Riders</p>
+        <p className="font-semibold py-2">Recommended for Regular Riders</p>
         <p className="pb-2">
           Get your bike looking new and running smooth ! 6 months once would be
           an ideal time.

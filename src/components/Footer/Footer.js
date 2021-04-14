@@ -1,12 +1,6 @@
 import React, { Component } from "react";
-import {
-  MapPin,
-  PhoneCall,
-  Mail,
-  Facebook,
-  Instagram,
-  MessageCircle,
-} from "react-feather";
+import { MapPin, PhoneCall, Mail, Facebook, Instagram } from "react-feather";
+import SocialLogo from "social-logos";
 
 class Footer extends Component {
   render() {
@@ -25,14 +19,19 @@ class Footer extends Component {
           </span>
           <div className="mt-5">
             <h5 className="my-3 flex flex-row text-white md:text-base text-sm font-semibold items-center">
-              <Mail color="white" size="30" strokeWidth="2" className="mr-2" />
-              support@boscobicycleworks.com
+              <Mail
+                color="white"
+                size="30"
+                strokeWidth="1.5"
+                className="mr-2"
+              />
+              info@boscobicycleworks.in
             </h5>
             <h5 className="my-3 flex flex-row text-white md:text-base text-sm font-semibold items-center">
               <PhoneCall
                 color="white"
                 size="30"
-                strokeWidth="2"
+                strokeWidth="1.5"
                 className="mr-2"
               />
               +91 8904019840 / +91 9964288130
@@ -41,7 +40,7 @@ class Footer extends Component {
               <MapPin
                 color="white"
                 size="30"
-                strokeWidth="2"
+                strokeWidth="1.5"
                 className="mr-2"
               />
               Yelahanka, Karnataka, Bangalore 560093
@@ -53,28 +52,32 @@ class Footer extends Component {
           </div>
 
           <div className="my-5 flex flex-row">
-            <div className="mr-6 text-white hover:shadow-xl hover:text-red-200">
+            <div className="mr-6 transition duration-500 ease-in-out transform md:hover:scale-110 text-white hover:shadow-xl">
               <a
                 href="https://www.facebook.com/Bosco-bicycle-works-101175561846174/?ti=as"
                 target="_blank"
               >
-                <Facebook size="40" strokeWidth="2" />
+                <Facebook size="40" strokeWidth="1.5" />
               </a>
             </div>
-            <div className="mr-6 text-white hover:shadow-xl hover:text-red-200">
+            <div className="mr-6 transition duration-500 ease-in-out transform md:hover:scale-110 text-white hover:shadow-xl">
               <a
                 href="https://api.whatsapp.com/send?phone=9964288130"
                 target="_blank"
               >
-                <MessageCircle size="40" strokeWidth="2" />
+                <SocialLogo
+                  className="fill-current text-white"
+                  icon="whatsapp"
+                  size={40}
+                />
               </a>
             </div>
-            <div className="mr-6 text-white hover:shadow-xl hover:text-red-200">
+            <div className="mr-6 transition duration-500 ease-in-out transform md:hover:scale-110 text-white hover:shadow-xl">
               <a
                 href="https://www.instagram.com/boscobicycleworks/"
                 target="_blank"
               >
-                <Instagram size="40" strokeWidth="2" />
+                <Instagram size="40" strokeWidth="1.5" />
               </a>
             </div>
           </div>

@@ -6,14 +6,15 @@ class SimpleForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: null,
-      email: null,
-      phone: null,
-      message: null,
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
       errors: {
-        name: "",
-        email: "",
-        phone: "",
+        name: "Name must be more than 2 characters!",
+        email: "Enter a vaild email address!",
+        phone: "Enter a vaild phone number!",
+        message: "Enter a vaild message!",
       },
     };
 
@@ -22,7 +23,7 @@ class SimpleForm extends Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   handleChange = (event) => {
@@ -41,17 +42,21 @@ class SimpleForm extends Component {
     switch (name) {
       case "name":
         errors.name =
-          value.length < 5 ? "Full Name must be 5 characters long!" : value;
+          value.length < 3 ? "Name must be more than 2 characters!" : "";
         break;
       case "email":
         errors.email = validEmailRegex.test(value)
-          ? value
-          : "Email is not valid!";
+          ? ""
+          : "Enter a vaild email address!";
         break;
       case "phone":
         errors.phone = validPhone.test(value)
-          ? value
-          : "Phone No is not valid!";
+          ? ""
+          : "Enter a vaild phone number!";
+        break;
+      case "message":
+        errors.message =
+          value.length < 5 ? "Message must be more than 5 characters!" : "";
         break;
       default:
         break;
@@ -62,20 +67,62 @@ class SimpleForm extends Component {
     });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     const validateForm = (errors) => {
       let valid = true;
-      Object.values(errors).forEach(
-        // if we have an error string set valid to false
-        (val) => val.length > 0 && (valid = false)
-      );
+      Object.keys(errors).forEach((key) => {
+        if (errors[key].length != 0 && valid === true) {
+          alert(errors[key]);
+          valid = false;
+        }
+      });
       return valid;
     };
 
     event.preventDefault();
     if (validateForm(this.state.errors)) {
+      let data = {
+        service_id: "service_6cbhpvh",
+        template_id: "template_reamh8x",
+        user_id: "user_vKlefJhUqLPGcgXQQQlrT",
+        template_params: {
+          formname: this.props.form,
+          name: this.state.name,
+          phone: this.state.phone,
+          email: this.state.email,
+          message: this.state.message,
+        },
+      };
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      };
+      let response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        requestOptions
+      ).then((response) => {
+        return response;
+      });
+
+      if (response.status == 200) {
+        this.setState({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          errors: {
+            name: "Name must be more than 2 characters!",
+            email: "Enter a vaild email address!",
+            phone: "Enter a vaild phone number!",
+            message: "Enter a vaild message!",
+          },
+        });
+        alert("Form submitted successfully!");
+      }
       console.info("Valid Form");
     } else {
+      alert("Something went wrong, please try after sometime!");
       console.error("Invalid Form");
     }
   };
@@ -121,7 +168,6 @@ class SimpleForm extends Component {
                 placeholder="Your Name"
                 onChange={(event) => this.handleChange(event, "name")}
               />
-
               <input
                 className={inputCSS}
                 type="text"
@@ -130,7 +176,6 @@ class SimpleForm extends Component {
                 placeholder="Your Number"
                 onChange={(event) => this.handleChange(event, "phone")}
               />
-
               <input
                 className={inputCSS}
                 type="text"
@@ -139,7 +184,6 @@ class SimpleForm extends Component {
                 placeholder="Your Email"
                 onChange={(event) => this.handleChange(event, "email")}
               />
-
               <textarea
                 className={inputCSS}
                 type="text"
@@ -148,17 +192,17 @@ class SimpleForm extends Component {
                 placeholder="Add Special Instructions (Optional)"
                 onChange={(event) => this.handleChange(event, "message")}
               />
-
               <h6 className="my-5 " style={{ fontStyle: "italic" }}>
                 On submitting the form, our executive will call you to discuss
                 further details.
               </h6>
-
-              <input
+              <button
                 className="hover:shadow-md hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
                 type="submit"
                 value={("Book", this.props.form)}
-              />
+              >
+                Book
+              </button>
             </form>
           </div>
         </div>

@@ -87,8 +87,13 @@ class NavBar extends Component {
         <nav className="flex-grow w-full bg-gray-200 opc h-auto shadow-md fixed Graphik-Regular-Web z-10">
           <div className="flex justify-around items-center">
             <div className="w-40">
-              <a aria-current="page" href="/">
-                <img tabIndex="0" alt="Accenture Logo" src={logo} />
+              <a className="focus:outline-black" aria-current="page" href="/">
+                <img
+                  className="focus:outline-none"
+                  tabIndex="0"
+                  alt="Bosco Logo"
+                  src={logo}
+                />
               </a>
             </div>
 
@@ -381,7 +386,7 @@ class NavBar extends Component {
         >
           <div className>
             <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
-              Book Service Mobile
+              Book Service
             </div>
 
             <div>

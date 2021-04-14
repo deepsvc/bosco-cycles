@@ -12,7 +12,7 @@ function RegularService() {
       <h1 className="text-white font-semibold p-1 text-3xl bg-gray-900">
         650/-*
       </h1>
-      <span className="text-xs">Price is Inclusive of GST</span>
+      <span className="text-xs">*Price is Inclusive of GST</span>
 
       {/* For Normal Screens */}
       <div

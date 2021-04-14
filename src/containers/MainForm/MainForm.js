@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
+import DatePicker from "react-datepicker";
 
+import "react-datepicker/dist/react-datepicker.css";
 import Navbar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 
@@ -9,98 +11,163 @@ class MainForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      biketype: null,
-      name: null,
-      email: null,
-      phone: null,
-      message: null,
-      geartype: null,
+      biketype: "",
+      brandname: "",
+      modelnumber: "",
+      message: "",
+      addons: "",
+      geartype: "",
+      newname: "",
+      newAddress: "",
+      newpincode: "",
+      newemail: "",
+      newalternatenumber: "",
+      newnumber: "",
+      newmessage: "",
+      startdate: "",
+      enddate: "",
       setShowOptions: false,
       errors: {
-        name: "",
-        email: "",
-        phone: "",
-        biketype: "",
+        biketype: "Bike type must be selected!",
+        brandname: "Brand name must be more than 1 character!",
+        modelnumber: "Model Number must be more than 1 character!",
+        message: "",
+        addons: "Add ons must be selected!",
+        geartype: "Gear type must be selected!",
+      },
+      errors1: {
+        newname: "Enter a vaild name!",
+        newAddress: "Enter a vaild address!",
+        newpincode: "Enter a vaild pincode!",
+        newemail: "Enter a valid email address!",
+        newalternatenumber: "",
+        newnumber: "Enter a valid phone number!",
+        newmessage: "",
+        startdate: "Enter a valid day and time to collect your cycle",
+        enddate: "Enter a valid day and time to return your cycle",
       },
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.myChangeHandler = this.myChangeHandler.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChangeSelect.bind(this);
   }
 
-  handleNext() {
-    this.setState((prevState, prevProps) => {
-      return { setShowOptions: !prevState.setShowOptions };
-    });
-  }
+  handleNext = (event) => {
+    event.preventDefault();
+    const validateForm = (errors) => {
+      let valid = true;
+      Object.keys(errors).forEach((key) => {
+        if (errors[key].length != 0 && valid === true) {
+          alert(errors[key]);
+          valid = false;
+        }
+      });
+      return valid;
+    };
+    if (validateForm(this.state.errors)) {
+      this.setState((prevState, prevProps) => {
+        return { setShowOptions: !prevState.setShowOptions };
+      });
+    } else {
+      console.error("Invalid Form");
+    }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
-  handleChange = (event) => {
-    const validEmailRegex = RegExp(
-      /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-    );
-
-    const validPhone = RegExp(
-      /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i
-    );
-
+  handleSubmit = async (event) => {
     event.preventDefault();
-    const { name, value } = event.target;
-    let errors = this.state.errors;
-
-    switch (name) {
-      // case "biketype":
-      //   errors.biketype =
-      //     value.length < 5 ? "Full Name must be 5 characters long!" : value;
-      //   break;
-      case "name":
-        errors.name =
-          value.length < 5 ? "Full Name must be 5 characters long!" : value;
-        break;
-      case "email":
-        errors.email = validEmailRegex.test(value)
-          ? value
-          : "Email is not valid!";
-        break;
-      case "phone":
-        errors.phone = validPhone.test(value)
-          ? value
-          : "Phone No is not valid!";
-        break;
-      default:
-        break;
-    }
-
-    this.setState({ errors, [name]: value }, () => {
-      console.log(errors);
-    });
-  };
-
-  handleChangeSelect = (event) => {
-    const { name, value } = event.target;
-    this.setState({ name: value }, () =>
-      console.log(`Option selected:`, this.state.value)
-    );
-  };
-
-  handleSubmit = (event) => {
     const validateForm = (errors) => {
       let valid = true;
-      Object.values(errors).forEach(
-        // if we have an error string set valid to false
-        (val) => val.length > 0 && (valid = false)
-      );
+      Object.keys(errors).forEach((key) => {
+        if (errors[key].length != 0 && valid === true) {
+          alert(errors[key]);
+          valid = false;
+        }
+      });
       return valid;
     };
+    if (validateForm(this.state.errors) && validateForm(this.state.errors1)) {
+      let data = {
+        service_id: "service_6cbhpvh",
+        template_id: "template_h9fkw6u",
+        user_id: "user_vKlefJhUqLPGcgXQQQlrT",
+        template_params: {
+          formname: this.props.form,
+          biketype: this.state.biketype,
+          brandname: this.state.brandname,
+          modelnumber: this.state.modelnumber,
+          message: this.state.message,
+          addons: this.state.addons,
+          geartype: this.state.geartype,
+          newname: this.state.newname,
+          newAddress: this.state.newAddress,
+          newpincode: this.state.newpincode,
+          newemail: this.state.newemail,
+          newalternatenumber: this.state.newalternatenumber,
+          newnumber: this.state.newnumber,
+          newmessage: this.state.newmessage,
+          startdate: this.state.startdate,
+          enddate: this.state.enddate,
+        },
+      };
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      };
+      let response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        requestOptions
+      ).then((response) => {
+        return response;
+      });
 
-    event.preventDefault();
-    if (validateForm(this.state.errors)) {
+      if (response.status == 200) {
+        this.setState({
+          biketype: "",
+          brandname: "",
+          modelnumber: "",
+          message: "",
+          addons: "",
+          geartype: "",
+          newname: "",
+          newAddress: "",
+          newpincode: "",
+          newemail: "",
+          newalternatenumber: "",
+          newnumber: "",
+          newmessage: "",
+          startdate: "",
+          enddate: "",
+          setShowOptions: false,
+          errors: {
+            biketype: "Bike type must be selected!",
+            brandname: "Brand name must be more than 1 character!",
+            modelnumber: "Model Number must be more than 1 character!",
+            message: "",
+            addons: "Add ons must be selected!",
+            geartype: "Gear type must be selected!",
+          },
+          errors1: {
+            newname: "Enter a vaild name!",
+            newAddress: "Enter a vaild address!",
+            newpincode: "Enter a vaild pincode!",
+            newemail: "Enter a valid email address!",
+            newalternatenumber: "",
+            newnumber: "Enter a valid phone number!",
+            newmessage: "",
+            startdate: "Enter a valid day and time to collect your cycle",
+            enddate: "Enter a valid day and time to return your cycle",
+          },
+        });
+        alert("Form submitted successfully!");
+      }
       console.info("Valid Form");
     } else {
+      // alert("Something went wrong, please try after sometime!");
       console.error("Invalid Form");
     }
   };
@@ -108,7 +175,88 @@ class MainForm extends Component {
   myChangeHandler = (event) => {
     let nam = event.target.name;
     let val = event.target.value;
-    this.setState({ [nam]: val });
+    let errors = this.state.errors;
+    console.log(nam, val);
+    switch (nam) {
+      case "brandname":
+        errors.brandname =
+          val.length <= 1 ? "Brand name must be more than 1 characters!" : "";
+        break;
+      case "modelnumber":
+        errors.modelnumber =
+          val.length <= 1 ? "Model Number must be more than 1 characters!" : "";
+        break;
+
+      case "addons":
+        errors.addons = val.length < 5 ? "Add ons must be selected!" : "";
+        break;
+      case "geartype":
+        errors.geartype = val.length < 5 ? "Gear type must be selected!" : "";
+        break;
+      default:
+        break;
+    }
+    this.setState({ errors, [nam]: val }, () => {
+      console.log(errors);
+    });
+  };
+
+  myChangeHandler2 = (event) => {
+    let nam = event.target.name;
+    let val = event.target.value;
+    let errors = this.state.errors1;
+    const validEmailRegex = RegExp(
+      /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+    );
+
+    const validPhone = RegExp(
+      /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i
+    );
+    const validpincode = RegExp(
+      /^([1-9]{1}[0-9]{5}|[1-9]{1}[0-9]{3}\\s[0-9]{3})$/i
+    );
+    console.log(nam, val);
+    switch (nam) {
+      case "newname":
+        errors.newname = val.length <= 1 ? "Enter a vaild name!" : "";
+        break;
+      case "newnumber":
+        errors.newnumber = validPhone.test(val)
+          ? ""
+          : "Enter a valid phone number!";
+        break;
+      case "newemail":
+        errors.newemail = validEmailRegex.test(val)
+          ? ""
+          : "Enter a valid email address!";
+        break;
+      case "newAddress":
+        errors.newAddress = val.length <= 10 ? "Enter a valid address!" : "";
+        break;
+      case "newpincode":
+        errors.newpincode = validpincode.test(val)
+          ? ""
+          : "Enter a vaild pincode!";
+        break;
+
+      case "startdate":
+        errors.startdate =
+          val.length <= 0
+            ? "Enter a valid day and time to collect your cycle"
+            : "";
+        break;
+      case "enddate":
+        errors.enddate =
+          val.length <= 0
+            ? "Enter a valid day and time to return your cycle"
+            : "";
+        break;
+      default:
+        break;
+    }
+    this.setState({ errors, [nam]: val }, () => {
+      console.log(errors);
+    });
   };
 
   render() {
@@ -144,13 +292,19 @@ class MainForm extends Component {
                       Let's talk about your bike...
                     </span>
                   </div>
-
                   <div className="md:grid flex gap-4 flex-col md:grid-cols-4">
                     <Dropdown
                       className={inputCSS}
-                      options={biketpyeoptions}
-                      onChange={this.myChangeHandler}
                       value={this.state.biketype}
+                      onChange={(selectedOption) => {
+                        this.state.errors.biketype =
+                          selectedOption.length <= 0
+                            ? "Bike type must be selected!"
+                            : "";
+                        this.setState({ biketype: selectedOption.value });
+                        console.log(selectedOption.value);
+                      }}
+                      options={biketpyeoptions}
                       name="biketpye"
                       placeholder="Select Bike Type"
                     />
@@ -158,8 +312,8 @@ class MainForm extends Component {
                     <input
                       className={inputCSS}
                       type="text"
-                      name="name"
-                      value={this.state.name}
+                      name="brandname"
+                      value={this.state.brandname}
                       placeholder="Brand"
                       onChange={this.myChangeHandler}
                     />
@@ -167,8 +321,8 @@ class MainForm extends Component {
                     <input
                       className={inputCSS}
                       type="text"
-                      name="phone"
-                      value={this.state.phone}
+                      name="modelnumber"
+                      value={this.state.modelnumber}
                       placeholder="Model"
                       onChange={this.myChangeHandler}
                     />
@@ -176,45 +330,49 @@ class MainForm extends Component {
                     <Dropdown
                       className={inputCSS}
                       options={geartype}
-                      onChange={this.handleChangeSelect}
+                      onChange={(selectedOption) => {
+                        this.state.errors.geartype =
+                          selectedOption.length <= 0
+                            ? "Gear type must be selected!"
+                            : "";
+                        this.setState({ geartype: selectedOption.value });
+                        console.log(selectedOption.value);
+                      }}
                       value={this.state.geartype}
                       name="geartype"
                       placeholder="Gear or Non-Gear"
                     />
                   </div>
-                  <div className="text-left">
+
+                  <div className="text-left" onChange={this.myChangeHandler}>
                     Add Ons <br />
                     <input
                       type="radio"
-                      name="name"
-                      value={this.state.name}
+                      value="BRAKE CABLE SET: Rs. 250 "
+                      name="addons"
                       placeholder="Brand"
-                      onChange={this.myChangeHandler}
                     />{" "}
                     BRAKE CABLE SET: Rs. 250 <br />
                     <input
                       type="radio"
-                      name="name"
-                      value={this.state.name}
+                      value="GEAR CABLE SET: Rs. 250 "
+                      name="addons"
                       placeholder="Brand"
-                      onChange={this.myChangeHandler}
                     />{" "}
                     GEAR CABLE SET: Rs. 250 <br />
                     <input
                       type="radio"
-                      name="name"
-                      value={this.state.name}
+                      value="PUNCHER: Rs. 55"
+                      name="addons"
                       placeholder="Brand"
-                      onChange={this.myChangeHandler}
                     />{" "}
                     PUNCHER: Rs. 55
                     <br />
                     <input
                       type="radio"
-                      name="name"
-                      value={this.state.name}
+                      value="Other"
+                      name="addons"
                       placeholder="Brand"
-                      onChange={this.myChangeHandler}
                     />{" "}
                     Other <br />
                   </div>
@@ -227,16 +385,17 @@ class MainForm extends Component {
                       name="message"
                       value={this.state.message}
                       placeholder="Add Special Instructions (Optional)"
-                      onChange={(event) => this.handleChange(event, "message")}
+                      onChange={this.myChangeHandler}
                     />
                     Any spares will be charged extra
                   </div>
-                  <input
-                    className="hover:shadow-md hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
-                    type="submit"
-                    onClick={this.handleNext.bind(this)}
-                    value={"Next"}
-                  />
+                  <button
+                    type="button"
+                    className="hover:shadow-md btn hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
+                    onClick={this.handleNext}
+                  >
+                    Next
+                  </button>
                 </>
               ) : (
                 <>
@@ -244,66 +403,96 @@ class MainForm extends Component {
                   <input
                     className={inputCSS}
                     type="text"
-                    name="email"
-                    value={this.state.email}
+                    name="newname"
+                    value={this.state.newname}
                     placeholder="Your Name"
-                    onChange={(event) => this.handleChange(event, "email")}
+                    onChange={this.myChangeHandler2}
                   />
                   <input
                     className={inputCSS}
                     type="text"
-                    name="email"
-                    value={this.state.email}
+                    name="newnumber"
+                    value={this.state.newnumber}
                     placeholder="Phone Number"
-                    onChange={(event) => this.handleChange(event, "email")}
+                    onChange={this.myChangeHandler2}
                   />
                   <input
                     className={inputCSS}
                     type="text"
-                    name="email"
-                    value={this.state.email}
+                    name="newalternatenumber"
+                    value={this.state.newalternatenumber}
                     placeholder="Alternate Phone Number"
-                    onChange={(event) => this.handleChange(event, "email")}
+                    onChange={this.myChangeHandler2}
                   />
                   <input
                     className={inputCSS}
                     type="text"
-                    name="email"
-                    value={this.state.email}
+                    name="newemail"
+                    value={this.state.newemail}
                     placeholder="Email"
-                    onChange={(event) => this.handleChange(event, "email")}
+                    onChange={this.myChangeHandler2}
                   />
                   <input
                     className={inputCSS}
                     type="text"
-                    name="email"
-                    value={this.state.email}
+                    name="newAddress"
+                    value={this.state.newAddress}
                     placeholder="Address"
-                    onChange={(event) => this.handleChange(event, "email")}
+                    onChange={this.myChangeHandler2}
                   />
                   <input
                     className={inputCSS}
                     type="text"
-                    name="email"
-                    value={this.state.email}
+                    name="newpincode"
+                    value={this.state.newpincode}
                     placeholder="Pin Code"
-                    onChange={(event) => this.handleChange(event, "email")}
+                    onChange={this.myChangeHandler2}
                   />
-                  <input
+                  <DatePicker
                     className={inputCSS}
-                    type="text"
-                    name="email"
-                    value={this.state.email}
-                    placeholder="Your Name"
-                    onChange={(event) => this.handleChange(event, "email")}
+                    placeholderText="Collect Date"
+                    selected={this.state.startdate}
+                    onChange={(date) => {
+                      this.state.errors1.startdate =
+                        date.length <= 0
+                          ? "Enter a valid day and time to collect your cycle"
+                          : "";
+                      this.setState({ startdate: date });
+                    }}
+                    showTimeSelect
+                    timeFormat="HH:mm"
+                    timeIntervals={45}
+                    timeCaption="time"
+                    minDate={new Date()}
+                    showDisabledMonthNavigation
+                    dateFormat="MMMM d, yyyy h:mm aa"
+                  />
+                  <DatePicker
+                    placeholderText="Return Date"
+                    className={inputCSS}
+                    selected={this.state.enddate}
+                    onChange={(date) => {
+                      this.state.errors1.enddate =
+                        date.length <= 0
+                          ? "Enter a valid day and time to return your cycle"
+                          : "";
+                      this.setState({ enddate: date });
+                    }}
+                    showTimeSelect
+                    timeFormat="HH:mm"
+                    timeIntervals={45}
+                    timeCaption="time"
+                    minDate={this.state.startdate}
+                    showDisabledMonthNavigation
+                    dateFormat="MMMM d, yyyy h:mm aa"
                   />
                   <textarea
                     className={inputCSS}
                     type="text"
-                    name="message"
-                    value={this.state.message}
+                    name="newmessage"
+                    value={this.state.newmessage}
                     placeholder="Add Special Instructions (Optional)"
-                    onChange={(event) => this.handleChange(event, "message")}
+                    onChange={(event) => this.myChangeHandler2}
                   />
                   <h6 className="my-5 " style={{ fontStyle: "italic" }}>
                     On submitting the form, our executive will call you to
@@ -313,19 +502,19 @@ class MainForm extends Component {
                     className="hover:shadow-md hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
                     type="submit"
                     onClick={this.handleNext.bind(this)}
-                    value={("Back")}
+                    value={"Back"}
                   />
-                                    <input
+                  <input
+                    className="hover:shadow-md hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
+                    type="submit"
+                    onClick={this.handleSubmit}
+                    value={"Submit Enquiry"}
+                  />
+                  <input
                     className="hover:shadow-md hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
                     type="submit"
                     onClick={this.handleNext.bind(this)}
-                    value={("Submit Enquiry")}
-                  />
-                                    <input
-                    className="hover:shadow-md hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
-                    type="submit"
-                    onClick={this.handleNext.bind(this)}
-                    value={("Make Payment")}
+                    value={"Make Payment"}
                   />
                 </>
               )}

@@ -65,11 +65,12 @@ class Header extends Component {
         <Carousel
           className="md:hidden"
           autoPlay={true}
-          interval={6000}
+          interval={14000}
           infiniteLoop={true}
           stopOnHover={false}
           useKeyboardArrows={true}
           showThumbs={false}
+          showArrows={false}
         >
           <div className="object-cover">
             <Player
