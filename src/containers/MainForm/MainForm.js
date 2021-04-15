@@ -26,7 +26,7 @@ class MainForm extends Component {
       newmessage: "",
       startdate: "",
       enddate: "",
-      setShowOptions: true,
+      setShowOptions: false,
       errors: {
         biketype: "Bike type must be selected!",
         brandname: "Brand name must be more than 1 character!",
