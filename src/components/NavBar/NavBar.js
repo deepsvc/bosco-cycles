@@ -5,6 +5,10 @@ import SkyLight from "react-skylight";
 /* Local Imports */
 import logo from "../../assets/images/logo.png";
 import "./Navbar.css";
+import RegularServiceModal from "./../../components/BookServiceModal/RegularService/RegularServiceModal";
+import UltimateStripModal from "./../../components/BookServiceModal/UltimateStrip/UltimateStripModal";
+import PremiumServiceModal from "./../../components/BookServiceModal/PremiumService/PremiumServiceModal";
+
 import RegularService from "./../../components/BookServiceModal/RegularService/RegularService";
 import UltimateStrip from "./../../components/BookServiceModal/UltimateStrip/UltimateStrip";
 import PremiumService from "./../../components/BookServiceModal/PremiumService/PremiumService";
@@ -75,7 +79,7 @@ class NavBar extends Component {
     var DoorStepMob = {
       minWidth: "350px",
       maxWidth: "350px",
-      left: "15%",
+      left: "5%",
       marginLeft: "0%",
       width: "50%",
       top: "5%",
@@ -86,7 +90,7 @@ class NavBar extends Component {
       <div className="flex">
         <nav className="flex-grow w-full bg-gray-200 opc h-auto shadow-md fixed Graphik-Regular-Web z-10">
           <div className="flex justify-around items-center">
-            <div className="w-40">
+            <div className="w-32 md:w-40 -ml-16 md:ml-0">
               <a className="focus:outline-black" aria-current="page" href="/">
                 <img
                   className="focus:outline-none"
@@ -134,12 +138,12 @@ class NavBar extends Component {
               </div>
             </>
             {/* Hamburger Menu Butoon */}
-            <div className="block pr-2 md:hidden flex items-center text-gray-600">
+            <div className="block pr-2 md:hidden flex items-center -mr-16 md:mr-0 text-gray-600">
               <HamburgerMenu
                 isOpen={this.state.setShowOptions}
                 menuClicked={this.handleClick.bind(this)}
-                width={25}
-                height={20}
+                width={20}
+                height={15}
                 strokeWidth={3}
                 rotate={0}
                 color="#F5F5F5"
@@ -450,7 +454,7 @@ class NavBar extends Component {
             <span className="underline1"></span>
           </div>
 
-          <RegularService />
+          <RegularServiceModal />
         </SkyLight>
 
         {/* Option for Premium and Ultimate */}
@@ -518,7 +522,7 @@ class NavBar extends Component {
             <span className="underline1"></span>
           </div>
           <div className="grid grid-flow-col">
-            <PremiumService />
+            <PremiumServiceModal />
           </div>
         </SkyLight>
 
@@ -537,7 +541,7 @@ class NavBar extends Component {
             <span className="underline1"></span>
           </div>
           <div className="grid grid-flow-col">
-            <UltimateStrip />
+            <UltimateStripModal />
           </div>
         </SkyLight>
 
@@ -545,7 +549,7 @@ class NavBar extends Component {
         <SkyLight
           overlayStyles={OverLayStyle}
           hideOnOverlayClicked
-          dialogStyles={PaintJob}
+          dialogStyles={MainModalMob}
           ref={(ref) => (this.simpleDialogPaintJob = ref)}
         >
           <div className="heading text-2xl divide-y divide-fuchsia-300 font-medium">

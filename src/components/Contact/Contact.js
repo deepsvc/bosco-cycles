@@ -1,9 +1,8 @@
-import React, { Component, setState, state } from "react";
+import React, { Component } from "react";
 import { Player, ControlBar } from "video-react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import "video-react/dist/video-react.css";
-import { Link } from "react-router-dom";
 
 import vid from "../../assets/images/vid.mp4";
 
@@ -71,7 +70,7 @@ class Contact extends Component {
     const validateForm = (errors) => {
       let valid = true;
       Object.keys(errors).forEach((key) => {
-        if (errors[key].length != 0 && valid === true) {
+        if (errors[key].length !== 0 && valid === true) {
           alert(errors[key]);
           valid = false;
         }
@@ -105,7 +104,7 @@ class Contact extends Component {
         return response;
       });
 
-      if (response.status == 200) {
+      if (response.status === 200) {
         this.setState({
           name: "",
           email: "",

@@ -12,13 +12,13 @@ class About extends Component {
         >
           <div className="md:w-4/5 m-5">
             <div className="col-span-2 flex justify-center mb-5 md:hidden">
-              <img className="" src={image1} />
+              <img alt="adreant pc" src={image1} />
             </div>
             <div className="flex items-center">
               <div className="flex flex-col">
                 <div className="items-center grid md:grid-cols-5 gap-4 md:gap-0 flex flex-col md:flex-row">
                   <div className="hidden flex justify-end md:flex col-span-2 mr-10">
-                    <img className="w-5/6" src={image1} />
+                    <img alt="adreant mobile" className="w-5/6" src={image1} />
                   </div>
                   <div className="col-span-3 flex flex-col md:text-left text-center">
                     <p className="text-lg italic pb-2">

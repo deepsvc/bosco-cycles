@@ -17,10 +17,7 @@ class SpecificServices extends Component {
               <div className="flex flex-col items-center">
                 <div className="hidden md:flex gifHolder g4 shadow-xl md:mr-5 mb-5 lg:mr-0 lg:mb-0"></div>
                 <div className="gifHolder-phone md:hidden g4 shadow-xl mb-5 lg:mr-0 lg:mb-0"></div>
-                <div
-                  style={{ fontSize: "1.38rem" }}
-                  className="text-center text-lg lg:py-10 pb-7 font-bold"
-                >
+                <div className="text-center md:text-xl text-lg lg:py-10 pb-7  font-bold">
                   BRAKE BLEEDING
                   <span className="text-base text-red-600">
                     <br />
@@ -36,10 +33,7 @@ class SpecificServices extends Component {
               <div className="flex flex-col items-center">
                 <div className="hidden md:flex gifHolder g2 shadow-xl md:mr-5 mb-5 lg:mr-0 lg:mb-0"></div>
                 <div className="gifHolder-phone md:hidden g2 shadow-xl md:mr-5 mb-5 lg:mr-0 lg:mb-0"></div>
-                <div
-                  style={{ fontSize: "1.38rem" }}
-                  className="text-center text-lg lg:py-10 pb-7 font-bold"
-                >
+                <div className="text-center md:text-xl text-lg lg:py-10 pb-7 font-bold">
                   WHEEL TRUING
                   <span className="text-base text-red-600">
                     <br />
@@ -55,10 +49,7 @@ class SpecificServices extends Component {
               <div className="flex flex-col items-center">
                 <div className="hidden md:flex gifHolder g3 shadow-xl md:mr-5 mb-5 lg:mr-0 lg:mb-0"></div>
                 <div className="gifHolder-phone md:hidden g3 shadow-xl md:mr-5 mb-5 lg:mr-0 lg:mb-0"></div>
-                <div
-                  style={{ fontSize: "1.38rem" }}
-                  className="text-center text-lg lg:py-10 pb-7 font-bold"
-                >
+                <div className="text-center md:text-xl text-lg lg:py-10 pb-7 font-bold">
                   SUSPENSION SERVICE
                   <span className="text-base text-red-600">
                     <br />
@@ -74,10 +65,7 @@ class SpecificServices extends Component {
               <div className="flex flex-col items-center">
                 <div className="hidden md:flex gifHolder g1 shadow-xl md:mr-5 mb-5 lg:mr-0 lg:mb-0"></div>
                 <div className="gifHolder-phone md:hidden g1 shadow-xl md:mr-5 mb-5 lg:mr-0 lg:mb-0"></div>
-                <div
-                  style={{ fontSize: "1.38rem" }}
-                  className="text-center text-lg lg:py-10 pb-7 font-bold"
-                >
+                <div className="text-center md:text-xl text-lg lg:py-10 pb-7 font-bold">
                   DRIVE TRAIN SERVICE
                   <span className="text-base text-red-600">
                     <br />

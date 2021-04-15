@@ -7,6 +7,7 @@ class Footer extends Component {
     return (
       <div className="flex lg:flex-row flex-col w-full justify-center items-center address">
         <iframe
+          title="Map from Google Maps"
           className="lg:w-96 w-4/5 h-60 md:h-72 m-5 md:my-7 md:mr-20 lg:ml-20"
           width="100%"
           scrolling="no"

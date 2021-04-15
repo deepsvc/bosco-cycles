@@ -4,12 +4,7 @@ import PremiumService from "../BookServiceModal/PremiumService/PremiumService";
 import RegularService from "../BookServiceModal/RegularService/RegularService";
 import UltimateStrip from "../BookServiceModal/UltimateStrip/UltimateStrip";
 
-import bg from "../../assets/images/servicebg.jpg";
-
 class Services extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

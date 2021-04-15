@@ -4,7 +4,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 
 import "video-react/dist/video-react.css";
-import { Link } from "react-router-dom";
 
 import vid from "../../assets/images/vid-pc.mp4";
 import vidPhone from "../../assets/images/vid-phone.mp4";
@@ -51,13 +50,13 @@ class Header extends Component {
             </Player>
           </div>
           <div>
-            <img src={image1} />
+            <img alt="header 1" src={image1} />
           </div>
           <div>
-            <img src={image2} />
+            <img alt="header 2" src={image2} />
           </div>
           <div>
-            <img src={image3} />
+            <img alt="header 3" src={image3} />
           </div>
         </Carousel>
 
@@ -85,13 +84,13 @@ class Header extends Component {
             </Player>
           </div>
           <div>
-            <img src={smimage1} />
+            <img alt="header 2 sm" src={smimage2} />
           </div>
           <div>
-            <img src={smimage2} />
+            <img alt="header 3 sm" src={smimage3} />
           </div>
           <div>
-            <img src={smimage3} />
+            <img alt="header 1 sm" src={smimage1} />
           </div>
         </Carousel>
       </div>

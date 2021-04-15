@@ -7,9 +7,6 @@ import image4 from "../../assets/images/4.gif";
 import image5 from "../../assets/images/5.gif";
 
 class HowItWorks extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
@@ -32,11 +29,11 @@ class HowItWorks extends Component {
               How it Works
             </h1>
 
-            <div className="flex items-center md:w-4/5 md:ml-20 mx-12 md:mt-5 xs:my-12">
+            <div className="flex items-center md:w-4/5  md:ml-20 mx-8 md:mt-5 xs:my-12">
               <div className="flex flex-col">
                 <div className="items-center grid grid-cols-5 gap-4 md:gap-0 flex flex-row pb-5">
                   <div className="col-span-1">
-                    <img className="md:w-3/5" src={image1} />
+                    <img alt="works 1" className="md:w-3/5" src={image1} />
                   </div>
                   <div className="col-span-4 md:-ml-8 flex flex-col text-left">
                     <span className="font-bold text-lg">
@@ -51,7 +48,7 @@ class HowItWorks extends Component {
 
                 <div className="items-center grid grid-cols-5 gap-4 flex flex-row pb-5">
                   <div className="col-span-1">
-                    <img className="md:w-3/5" src={image2} />
+                    <img alt="works 2" className="md:w-3/5" src={image2} />
                   </div>
                   <div className="col-span-4 md:-ml-8 flex flex-col text-left">
                     <span className="font-bold text-lg">
@@ -66,7 +63,7 @@ class HowItWorks extends Component {
 
                 <div className="items-center grid grid-cols-5 gap-4 flex flex-row pb-5">
                   <div className="col-span-1">
-                    <img className="md:w-3/5" src={image3} />
+                    <img alt="works 3" className="md:w-3/5" src={image3} />
                   </div>
                   <div className="col-span-4 md:-ml-8 flex flex-col text-left">
                     <span className="font-bold text-lg">LOYALTY</span>
@@ -79,7 +76,7 @@ class HowItWorks extends Component {
 
                 <div className="items-center grid grid-cols-5 gap-4 flex flex-row pb-5">
                   <div className="col-span-1">
-                    <img className="md:w-3/5" src={image4} />
+                    <img alt="works 4" className="md:w-3/5" src={image4} />
                   </div>
                   <div className="col-span-4 md:-ml-8 flex flex-col text-left">
                     <span className="font-bold text-lg">ASSURANCE</span>
@@ -91,7 +88,7 @@ class HowItWorks extends Component {
 
                 <div className="items-center grid grid-cols-5 gap-4 flex flex-row pb-5">
                   <div className="col-span-1">
-                    <img className="md:w-3/5" src={image5} />
+                    <img alt="works 5" className="md:w-3/5" src={image5} />
                   </div>
                   <div className="col-span-4 md:-ml-8 flex flex-col text-left">
                     <span className="font-bold text-lg">EXPRESS SERVICE</span>

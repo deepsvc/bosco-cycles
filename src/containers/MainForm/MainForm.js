@@ -57,7 +57,7 @@ class MainForm extends Component {
     const validateForm = (errors) => {
       let valid = true;
       Object.keys(errors).forEach((key) => {
-        if (errors[key].length != 0 && valid === true) {
+        if (errors[key].length !== 0 && valid === true) {
           alert(errors[key]);
           valid = false;
         }
@@ -82,7 +82,7 @@ class MainForm extends Component {
     const validateForm = (errors) => {
       let valid = true;
       Object.keys(errors).forEach((key) => {
-        if (errors[key].length != 0 && valid === true) {
+        if (errors[key].length !== 0 && valid === true) {
           alert(errors[key]);
           valid = false;
         }
@@ -125,7 +125,7 @@ class MainForm extends Component {
         return response;
       });
 
-      if (response.status == 200) {
+      if (response.status === 200) {
         this.setState({
           biketype: "",
           brandname: "",
