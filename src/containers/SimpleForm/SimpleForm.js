@@ -131,7 +131,7 @@ class SimpleForm extends Component {
     const customPaintJobMessage = () => {
       if (this.props.form === "book custom paint job") {
         return (
-          <p className="mt-2">
+          <p className="my-2">
             Are you looking to spruce up the appearance of your bike?
             <br /> What if we told you, you can see your bike in that colour you
             have always dreamt of?
@@ -144,12 +144,12 @@ class SimpleForm extends Component {
     };
 
     const inputCSS =
-      "focus:placeholder-gray-200 focus:shadow-xl hover:shadow-md placeholder-gray-300 my-5 py-2 px-2 border-solid border-2 border-red-200 border-opacity-100 rounded";
+      "focus:placeholder-gray-200 focus:shadow-xl hover:shadow-md placeholder-gray-300 my-3 py-2 px-2 w-full md:w-5/6 border-solid border-2 border-red-200 border-opacity-100 rounded";
     return (
       <>
         <Navbar />
-        <div className="pt-24 text-left flex bg-gray-100 justify-center">
-          <div className="md:w-1/2  m-10">
+        <div className="md:pt-24 pt-16 text-center flex bg-gray-100 justify-center">
+          <div className="md:w-1/2 m-10">
             <h1 className="text-black text-3xl font-bold uppercase">
               {this.props.form}
             </h1>
@@ -157,7 +157,7 @@ class SimpleForm extends Component {
             {customPaintJobMessage()}
 
             <form
-              className="flex flex-col justify-center items-center"
+              className="flex flex-col items-center"
               onSubmit={this.handleSubmit}
             >
               <input
@@ -197,7 +197,7 @@ class SimpleForm extends Component {
                 further details.
               </h6>
               <button
-                className="hover:shadow-md hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
+                className="hover:bg-black transition duration-500 ease-in-out transform md:hover:scale-105 hover:shadow-xl transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
                 type="submit"
                 value={("Book", this.props.form)}
               >

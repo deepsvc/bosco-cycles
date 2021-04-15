@@ -26,7 +26,7 @@ class MainForm extends Component {
       newmessage: "",
       startdate: "",
       enddate: "",
-      setShowOptions: false,
+      setShowOptions: true,
       errors: {
         biketype: "Bike type must be selected!",
         brandname: "Brand name must be more than 1 character!",
@@ -271,30 +271,39 @@ class MainForm extends Component {
     const geartype = ["Gear", "Non-Gear"];
 
     const inputCSS =
-      "focus:placeholder-gray-200 col-span-1 focus:shadow-xl hover:shadow-md placeholder-gray-300 my-5 py-2 px-2 w-full border-solid border-2 border-red-200 border-opacity-100 rounded";
+      "focus:placeholder-gray-200 col-span-1 focus:shadow-xl hover:shadow-md placeholder-gray-300 md:my-5 p-2 w-full border-solid border-2 border-red-200 border-opacity-100 rounded";
+
+    const inputCSS2 =
+      "focus:placeholder-gray-200 col-span-1 focus:shadow-xl hover:shadow-md placeholder-gray-300 my-2 p-2 w-full border-solid border-2 border-red-200 border-opacity-100 rounded";
+
+    const dropDownCSS =
+      "focus:placeholder-gray-200 col-span-1 text-left focus:shadow-xl hover:shadow-md placeholder-gray-300 md:my-5 w-full border-solid border-2 border-red-200 border-opacity-100 rounded";
+
+    const textAreaCSS =
+      "focus:placeholder-gray-200 col-span-1 text-left focus:shadow-xl hover:shadow-md placeholder-gray-300 p-2 md:my-1 w-full border-solid border-2 border-red-200 border-opacity-100 rounded";
     return (
       <>
         <Navbar />
-        <div className="w-screen pt-24 text-left flex bg-gray-100 justify-center">
+        <div className="w-screen md:pt-24 pt-20 pb-10 text-center flex bg-gray-100 justify-center">
           <div className="">
             <h1 className="text-black text-3xl font-bold uppercase">
               {this.props.form}
             </h1>
 
             <form
-              className="flex flex-col justify-center items-center"
+              className="flex flex-col items-center md:items-start"
               onSubmit={this.handleSubmit}
             >
               {this.state.setShowOptions === false ? (
                 <>
-                  <div className="text-left">
-                    <span className="text-base italic ">
+                  <div className="mt-2">
+                    <span className="text-base italic">
                       Let's talk about your bike...
                     </span>
                   </div>
-                  <div className="md:grid flex gap-4 flex-col md:grid-cols-4">
+                  <div className="md:grid flex gap-4 md:w-full w-4/6 flex-col md:grid-cols-4">
                     <Dropdown
-                      className={inputCSS}
+                      className={dropDownCSS}
                       value={this.state.biketype}
                       onChange={(selectedOption) => {
                         this.state.errors.biketype =
@@ -328,7 +337,7 @@ class MainForm extends Component {
                     />
 
                     <Dropdown
-                      className={inputCSS}
+                      className={dropDownCSS}
                       options={geartype}
                       onChange={(selectedOption) => {
                         this.state.errors.geartype =
@@ -344,54 +353,61 @@ class MainForm extends Component {
                     />
                   </div>
 
-                  <div className="text-left" onChange={this.myChangeHandler}>
-                    Add Ons <br />
-                    <input
-                      type="radio"
-                      value="BRAKE CABLE SET: Rs. 250 "
-                      name="addons"
-                      placeholder="Brand"
-                    />{" "}
-                    BRAKE CABLE SET: Rs. 250 <br />
-                    <input
-                      type="radio"
-                      value="GEAR CABLE SET: Rs. 250 "
-                      name="addons"
-                      placeholder="Brand"
-                    />{" "}
-                    GEAR CABLE SET: Rs. 250 <br />
-                    <input
-                      type="radio"
-                      value="PUNCHER: Rs. 55"
-                      name="addons"
-                      placeholder="Brand"
-                    />{" "}
-                    PUNCHER: Rs. 55
-                    <br />
-                    <input
-                      type="radio"
-                      value="Other"
-                      name="addons"
-                      placeholder="Brand"
-                    />{" "}
-                    Other <br />
+                  <div
+                    className="text-left my-5 mx-10"
+                    onChange={this.myChangeHandler}
+                  >
+                    <span className="font-semibold">
+                      Add Ons: <br />
+                    </span>
+                    <div>
+                      <input
+                        type="radio"
+                        value="BRAKE CABLE SET: Rs. 250 "
+                        name="addons"
+                        placeholder="Brand"
+                      />{" "}
+                      BRAKE CABLE SET: Rs. 250 <br />
+                      <input
+                        type="radio"
+                        value="GEAR CABLE SET: Rs. 250 "
+                        name="addons"
+                        placeholder="Brand"
+                      />{" "}
+                      GEAR CABLE SET: Rs. 250 <br />
+                      <input
+                        type="radio"
+                        value="PUNCHER: Rs. 55"
+                        name="addons"
+                        placeholder="Brand"
+                      />{" "}
+                      PUNCHER: Rs. 55
+                      <br />
+                      <input
+                        type="radio"
+                        value="Other"
+                        name="addons"
+                        placeholder="Brand"
+                      />{" "}
+                      Other <br />
+                    </div>
                   </div>
-                  <div className="text-left">
+                  <div className="text-left w-4/6 md:w-full">
                     Any additional information that we should be aware of your
                     bike:
                     <textarea
-                      className={inputCSS}
+                      className={textAreaCSS}
                       type="text"
                       name="message"
                       value={this.state.message}
                       placeholder="Add Special Instructions (Optional)"
                       onChange={this.myChangeHandler}
                     />
-                    Any spares will be charged extra
+                    Any spares will be charged extra.
                   </div>
                   <button
                     type="button"
-                    className="hover:shadow-md btn hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
+                    className="hover:bg-black transition duration-500 ease-in-out transform md:hover:scale-105 hover:shadow-xl btn transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
                     onClick={this.handleNext}
                   >
                     Next
@@ -399,123 +415,122 @@ class MainForm extends Component {
                 </>
               ) : (
                 <>
-                  Let's talk about you...
-                  <input
-                    className={inputCSS}
-                    type="text"
-                    name="newname"
-                    value={this.state.newname}
-                    placeholder="Your Name"
-                    onChange={this.myChangeHandler2}
-                  />
-                  <input
-                    className={inputCSS}
-                    type="text"
-                    name="newnumber"
-                    value={this.state.newnumber}
-                    placeholder="Phone Number"
-                    onChange={this.myChangeHandler2}
-                  />
-                  <input
-                    className={inputCSS}
-                    type="text"
-                    name="newalternatenumber"
-                    value={this.state.newalternatenumber}
-                    placeholder="Alternate Phone Number"
-                    onChange={this.myChangeHandler2}
-                  />
-                  <input
-                    className={inputCSS}
-                    type="text"
-                    name="newemail"
-                    value={this.state.newemail}
-                    placeholder="Email"
-                    onChange={this.myChangeHandler2}
-                  />
-                  <input
-                    className={inputCSS}
-                    type="text"
-                    name="newAddress"
-                    value={this.state.newAddress}
-                    placeholder="Address"
-                    onChange={this.myChangeHandler2}
-                  />
-                  <input
-                    className={inputCSS}
-                    type="text"
-                    name="newpincode"
-                    value={this.state.newpincode}
-                    placeholder="Pin Code"
-                    onChange={this.myChangeHandler2}
-                  />
-                  <DatePicker
-                    className={inputCSS}
-                    placeholderText="Collect Date"
-                    selected={this.state.startdate}
-                    onChange={(date) => {
-                      this.state.errors1.startdate =
-                        date.length <= 0
-                          ? "Enter a valid day and time to collect your cycle"
-                          : "";
-                      this.setState({ startdate: date });
-                    }}
-                    showTimeSelect
-                    timeFormat="HH:mm"
-                    timeIntervals={45}
-                    timeCaption="time"
-                    minDate={new Date()}
-                    showDisabledMonthNavigation
-                    dateFormat="MMMM d, yyyy h:mm aa"
-                  />
-                  <DatePicker
-                    placeholderText="Return Date"
-                    className={inputCSS}
-                    selected={this.state.enddate}
-                    onChange={(date) => {
-                      this.state.errors1.enddate =
-                        date.length <= 0
-                          ? "Enter a valid day and time to return your cycle"
-                          : "";
-                      this.setState({ enddate: date });
-                    }}
-                    showTimeSelect
-                    timeFormat="HH:mm"
-                    timeIntervals={45}
-                    timeCaption="time"
-                    minDate={this.state.startdate}
-                    showDisabledMonthNavigation
-                    dateFormat="MMMM d, yyyy h:mm aa"
-                  />
-                  <textarea
-                    className={inputCSS}
-                    type="text"
-                    name="newmessage"
-                    value={this.state.newmessage}
-                    placeholder="Add Special Instructions (Optional)"
-                    onChange={(event) => this.myChangeHandler2}
-                  />
-                  <h6 className="my-5 " style={{ fontStyle: "italic" }}>
-                    On submitting the form, our executive will call you to
-                    discuss further details.
-                  </h6>
-                  <input
-                    className="hover:shadow-md hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
-                    type="submit"
-                    onClick={this.handleNext.bind(this)}
-                    value={"Back"}
-                  />
-                  <input
-                    className="hover:shadow-md hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
-                    type="submit"
-                    onClick={this.handleSubmit}
-                    value={"Submit Enquiry"}
-                  />
-                  <input
-                    className="hover:shadow-md hover:bg-red-800 transform hover:scale-105 my-5 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
-                    type="submit"
-                    onClick={this.handleNext.bind(this)}
-                    value={"Make Payment"}
-                  />
+                  <span className="italic my-3 md:px-20">
+                    Let's talk about you...
+                  </span>
+
+                  <div className="flex md:w-full md:px-20 w-4/6 flex-col">
+                    <input
+                      className={inputCSS2}
+                      type="text"
+                      name="newname"
+                      value={this.state.newname}
+                      placeholder="Your Name"
+                      onChange={this.myChangeHandler2}
+                    />
+                    <input
+                      className={inputCSS2}
+                      type="text"
+                      name="newnumber"
+                      value={this.state.newnumber}
+                      placeholder="Phone Number"
+                      onChange={this.myChangeHandler2}
+                    />
+                    <input
+                      className={inputCSS2}
+                      type="text"
+                      name="newalternatenumber"
+                      value={this.state.newalternatenumber}
+                      placeholder="Alternate Phone Number"
+                      onChange={this.myChangeHandler2}
+                    />
+                    <input
+                      className={inputCSS2}
+                      type="text"
+                      name="newemail"
+                      value={this.state.newemail}
+                      placeholder="Email"
+                      onChange={this.myChangeHandler2}
+                    />
+                    <input
+                      className={inputCSS2}
+                      type="text"
+                      name="newAddress"
+                      value={this.state.newAddress}
+                      placeholder="Address"
+                      onChange={this.myChangeHandler2}
+                    />
+                    <input
+                      className={inputCSS2}
+                      type="text"
+                      name="newpincode"
+                      value={this.state.newpincode}
+                      placeholder="Pin Code"
+                      onChange={this.myChangeHandler2}
+                    />
+                    <DatePicker
+                      className={inputCSS2}
+                      placeholderText="Collect Date"
+                      selected={this.state.startdate}
+                      onChange={(date) => {
+                        this.state.errors1.startdate =
+                          date.length <= 0
+                            ? "Enter a valid day and time to collect your cycle"
+                            : "";
+                        this.setState({ startdate: date });
+                      }}
+                      showTimeSelect
+                      timeFormat="HH:mm"
+                      timeIntervals={45}
+                      timeCaption="time"
+                      minDate={new Date()}
+                      showDisabledMonthNavigation
+                      dateFormat="MMMM d, yyyy h:mm aa"
+                    />
+                    <DatePicker
+                      placeholderText="Return Date"
+                      className={inputCSS2}
+                      selected={this.state.enddate}
+                      onChange={(date) => {
+                        this.state.errors1.enddate =
+                          date.length <= 0
+                            ? "Enter a valid day and time to return your cycle"
+                            : "";
+                        this.setState({ enddate: date });
+                      }}
+                      showTimeSelect
+                      timeFormat="HH:mm"
+                      timeIntervals={45}
+                      timeCaption="time"
+                      minDate={this.state.startdate}
+                      showDisabledMonthNavigation
+                      dateFormat="MMMM d, yyyy h:mm aa"
+                    />
+                    <h6 className="my-5 italic">
+                      On submitting the form, our executive will call you to
+                      discuss further details.
+                    </h6>
+                    <div className="grid md:grid-cols-3 gap-4">
+                      <input
+                        className="hover:bg-black transition duration-500 ease-in-out transform md:hover:scale-105 hover:shadow-xl transform my-2 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
+                        type="submit"
+                        onClick={this.handleNext.bind(this)}
+                        value={"Back"}
+                      />
+                      <input
+                        className="hover:bg-black transition duration-500 ease-in-out transform md:hover:scale-105 hover:shadow-xl transform my-2 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
+                        type="submit"
+                        onClick={this.handleSubmit}
+                        value={"Submit Enquiry"}
+                      />
+                      <input
+                        className="hover:bg-black transition duration-500 ease-in-out transform md:hover:scale-105 hover:shadow-xl transform my-2 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
+                        type="submit"
+                        onClick={this.handleNext.bind(this)}
+                        value={"Make Payment"}
+                      />
+                    </div>
+                  </div>
                 </>
               )}
             </form>
