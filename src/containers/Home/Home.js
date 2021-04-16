@@ -14,6 +14,7 @@ function Home() {
     <div className="flex flex-col">
       <NavBar />
       <Header />
+      <div id="about"></div>
       <div className="flex justify-center">
         <HowItWorks />
       </div>

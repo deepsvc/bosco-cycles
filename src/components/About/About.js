@@ -3,13 +3,14 @@ import React, { Component } from "react";
 import image1 from "../../assets/images/ardent-content.png";
 
 class About extends Component {
+  componentDidMount() {
+    window.scrollTo(10, 20);
+  }
+
   render() {
     return (
       <>
-        <div
-          className="text-left flex justify-center bg-gray-200 shadow-inner"
-          id="about"
-        >
+        <div className="text-left flex justify-center bg-gray-200 shadow-inner">
           <div className="md:w-4/5 m-5">
             <div className="col-span-2 flex justify-center mb-5 md:hidden">
               <img alt="adreant pc" src={image1} />
