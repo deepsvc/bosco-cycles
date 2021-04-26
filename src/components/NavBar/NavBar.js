@@ -5,9 +5,6 @@ import SkyLight from "react-skylight";
 /* Local Imports */
 import logo from "../../assets/images/logo.png";
 import "./Navbar.css";
-import RegularServiceModal from "./../../components/BookServiceModal/RegularService/RegularServiceModal";
-import UltimateStripModal from "./../../components/BookServiceModal/UltimateStrip/UltimateStripModal";
-import PremiumServiceModal from "./../../components/BookServiceModal/PremiumService/PremiumServiceModal";
 
 import RegularService from "./../../components/BookServiceModal/RegularService/RegularService";
 import UltimateStrip from "./../../components/BookServiceModal/UltimateStrip/UltimateStrip";
@@ -51,10 +48,10 @@ class NavBar extends Component {
 
     var MainModalMob = {
       minHeight: "150px",
-      maxHeight: "400px",
-      left: "15%",
+      maxHeight: "800px",
+      left: "5%",
       marginLeft: "0%",
-      width: "70%",
+      width: "90%",
     };
 
     var DoorStep = {
@@ -319,34 +316,6 @@ class NavBar extends Component {
           </div>
         </SkyLight>
 
-        <SkyLight
-          overlayStyles={OverLayStyle}
-          hideOnOverlayClicked
-          dialogStyles={CollectDrop}
-          ref={(ref) => (this.simpleDialog2 = ref)}
-        >
-          <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
-            Collect & Drop Service
-          </div>
-
-          <div className="pb-2">
-            <span className="underline1"></span>
-          </div>
-          <div className="grid grid-flow-col">
-            <PremiumService />
-            <div
-              style={{
-                borderLeft: "2px solid grey",
-                height: "100%",
-                position: "relative",
-                left: "50%",
-                top: "0",
-              }}
-            ></div>
-            <UltimateStrip />
-          </div>
-        </SkyLight>
-
         {/* Custom Paint Job */}
         <SkyLight
           overlayStyles={OverLayStyle}
@@ -397,15 +366,17 @@ class NavBar extends Component {
               <span className="underline1"></span>
             </div>
 
-            <button
-              className="bg-red-600 w-full text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center my-2"
-              onClick={() => {
-                this.simpleDialogMob.hide();
-                this.simpleDialogMob1.show();
-              }}
-            >
-              Door Step Service
-            </button>
+            <a href="/#doorstep">
+              <button
+                className="bg-red-600 w-full text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center my-2"
+                onClick={() => {
+                  this.simpleDialogMob.hide();
+                  // this.simpleDialogMob1.show();
+                }}
+              >
+                Door Step Service
+              </button>
+            </a>
 
             <button
               className="bg-red-600 w-full text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center my-2"
@@ -439,23 +410,6 @@ class NavBar extends Component {
             </button>
           </div>
         </SkyLight>
-        {/* Door Step Service */}
-        <SkyLight
-          overlayStyles={OverLayStyle}
-          hideOnOverlayClicked
-          dialogStyles={DoorStepMob}
-          ref={(ref) => (this.simpleDialogMob1 = ref)}
-        >
-          <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
-            Door Step Service
-          </div>
-
-          <div className="pb-2">
-            <span className="underline1"></span>
-          </div>
-
-          <RegularServiceModal />
-        </SkyLight>
 
         {/* Option for Premium and Ultimate */}
         <SkyLight
@@ -472,27 +426,28 @@ class NavBar extends Component {
             <div>
               <span className="underline1"></span>
             </div>
-
-            <button
-              className="bg-red-600 w-full text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center my-2"
-              onClick={() => {
-                this.simpleDialogMobPremium.show();
-                this.simpleDialogMob.hide();
-              }}
-            >
-              Premium Service
-            </button>
-
-            <button
-              className="bg-red-600 w-full text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center my-2"
-              onClick={() => {
-                this.simpleDialogUltimate.show();
-                this.simpleDialog.hide();
-              }}
-            >
-              Ultimate Strip
-            </button>
-
+            <a href="/#premiumserv">
+              <button
+                className="bg-red-600 w-full text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center my-2"
+                onClick={() => {
+                  this.simpleDialogMob.hide();
+                  this.simpleDialogOptionMob.hide();
+                }}
+              >
+                Premium Service mobile
+              </button>
+            </a>
+            <a href="/#ultimateserv">
+              <button
+                className="bg-red-600 w-full text-gray-50 font-bold rounded border-b-2 border-red-700 hover:bg-gray-100 hover:text-red-500 shadow-md py-2 px-2 sm:px-6 items-center my-2"
+                onClick={() => {
+                  this.simpleDialog.hide();
+                  this.simpleDialogOptionMob.hide();
+                }}
+              >
+                Ultimate Strip
+              </button>
+            </a>
             <div>
               <span className="underline1"></span>
             </div>
@@ -503,45 +458,6 @@ class NavBar extends Component {
             >
               Close
             </button>
-          </div>
-        </SkyLight>
-
-        {/* Pick and Drop Service */}
-        {/* Premium Service */}
-        <SkyLight
-          overlayStyles={OverLayStyle}
-          hideOnOverlayClicked
-          dialogStyles={DoorStepMob}
-          ref={(ref) => (this.simpleDialogMobPremium = ref)}
-        >
-          <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
-            Collect & Drop Service
-          </div>
-
-          <div className="pb-2">
-            <span className="underline1"></span>
-          </div>
-          <div className="grid grid-flow-col">
-            <PremiumServiceModal />
-          </div>
-        </SkyLight>
-
-        {/* Ultimate Strip */}
-        <SkyLight
-          overlayStyles={OverLayStyle}
-          hideOnOverlayClicked
-          dialogStyles={DoorStepMob}
-          ref={(ref) => (this.simpleDialogUltimate = ref)}
-        >
-          <div className="text-2xl divide-y divide-fuchsia-300 font-medium pb-2">
-            Collect & Drop Service
-          </div>
-
-          <div className="pb-2">
-            <span className="underline1"></span>
-          </div>
-          <div className="grid grid-flow-col">
-            <UltimateStripModal />
           </div>
         </SkyLight>
 

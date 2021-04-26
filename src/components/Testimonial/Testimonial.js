@@ -45,7 +45,11 @@ class Testimonial extends Component {
         <div className="md:flex md:flex-row item-center lg:w-3/4 w-11/12">
           <div className="hidden md:flex w-96 ">
             <button className="focus:outline-none" onClick={this.prev}>
-              <img alt="left button" className="text-gray-800 opacity-50" src={left} />
+              <img
+                alt="left button"
+                className="text-gray-800 opacity-50"
+                src={left}
+              />
             </button>
           </div>
 

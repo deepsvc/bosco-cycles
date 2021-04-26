@@ -12,7 +12,7 @@ class About extends Component {
       <>
         <div className="text-left flex justify-center bg-gray-200 shadow-inner">
           <div className="md:w-4/5 m-5">
-            <div className="col-span-2 flex justify-center mb-5 md:hidden">
+            <div className="xs:col-span-2 xs:flex justify-center mb-5 md:hidden">
               <img alt="adreant pc" src={image1} />
             </div>
             <div className="flex items-center">
@@ -46,6 +46,9 @@ class About extends Component {
                       commuter nipping through traffic, a roadie who does long
                       rides or a mountain biker who hits the trails!
                     </p>
+                    <div id="service"></div>
+                    <div id="doorstep"></div>
+
                     <p className="text-lg italic font-semibold pb-2">
                       WE ARE HERE TO CATER FOR YOUR NEEDS!
                     </p>

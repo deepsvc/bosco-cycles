@@ -7,7 +7,6 @@ import image4 from "../../assets/images/4.gif";
 import image5 from "../../assets/images/5.gif";
 
 class HowItWorks extends Component {
-
   render() {
     return (
       <>
@@ -92,6 +91,7 @@ class HowItWorks extends Component {
                   </div>
                   <div className="col-span-4 md:-ml-8 flex flex-col text-left">
                     <span className="font-bold text-lg">EXPRESS SERVICE</span>
+                    <div id="about"></div>
                     <span className="text-sm">
                       24 Hour Fast Tracked and quick laned services for
                       emergencies. (**Charges Apply)
