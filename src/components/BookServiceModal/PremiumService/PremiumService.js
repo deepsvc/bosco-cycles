@@ -81,7 +81,7 @@ function PremiumService() {
         </div>
       </div>
 
-      <div className="">
+      <div className="hidden md:grid">
         <Link to="/BookPremiumService">
           <h1 className="text-white font-bold object-bottom p-2 text-2xl bg-gray-900">
             BOOK SERVICE

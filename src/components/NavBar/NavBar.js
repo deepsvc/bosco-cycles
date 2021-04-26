@@ -434,7 +434,7 @@ class NavBar extends Component {
                   this.simpleDialogOptionMob.hide();
                 }}
               >
-                Premium Service mobile
+                Premium Service
               </button>
             </a>
             <a href="/#ultimateserv">
