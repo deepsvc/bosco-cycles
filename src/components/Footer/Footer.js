@@ -11,40 +11,61 @@ class Footer extends Component {
           className="lg:w-96 w-4/5 h-60 md:h-72 m-5 md:my-7 md:mr-20 lg:ml-20"
           width="100%"
           scrolling="no"
-          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Yelahanka,bangalore+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15544.36004322427!2d77.5813913!3d13.0934817!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa88c6ccb32c003da!2sBosco%20bicycle%20works!5e0!3m2!1sen!2sin!4v1619541846109!5m2!1sen!2sin"
         ></iframe>
 
         <div className="lg:w-96 w-4/5 text-left lg:mr-20">
           <span className="text-xl md:text-3xl text-white font-bold">
             REACH US AT
           </span>
-          <div className="mt-5">
+          <div className="mt-2">
             <h5 className="my-3 flex flex-row text-white md:text-base text-sm font-semibold items-center">
-              <Mail
-                color="white"
-                size="30"
-                strokeWidth="1.5"
-                className="mr-2"
-              />
-              info@boscobicycleworks.in
+              <div className="items-center grid grid-cols-10 gap-4 flex flex-row">
+                <div className="col-span-1">
+                  <Mail
+                    color="white"
+                    size="30"
+                    strokeWidth="1.5"
+                    className="mr-2"
+                  />
+                </div>
+                <div className="col-span-9 text-left">
+                  <span className="">info@boscobicycleworks.in</span>
+                </div>
+              </div>
             </h5>
             <h5 className="my-3 flex flex-row text-white md:text-base text-sm font-semibold items-center">
-              <PhoneCall
-                color="white"
-                size="30"
-                strokeWidth="1.5"
-                className="mr-2"
-              />
-              +91 8904019840 / +91 9964288130
+              <div className="items-center grid grid-cols-10 gap-4 flex flex-row">
+                <div className="col-span-1">
+                  <PhoneCall
+                    color="white"
+                    size="30"
+                    strokeWidth="1.5"
+                    className="mr-2"
+                  />
+                </div>
+                <div className="col-span-9 text-left">
+                  <span className="">+91 8904019840 / +91 9964288130</span>
+                </div>
+              </div>
             </h5>
-            <h5 className="mmy-3 flex flex-row text-white md:text-base text-sm font-semibold items-center">
-              <MapPin
-                color="white"
-                size="30"
-                strokeWidth="1.5"
-                className="mr-2"
-              />
-              Yelahanka, Karnataka, Bangalore 560093
+            <h5 className="my-3 flex flex-row text-white md:text-base text-sm font-semibold items-center">
+              <div className="items-center grid grid-cols-10 gap-4 flex flex-row">
+                <div className="col-span-1">
+                  <MapPin
+                    color="white"
+                    size="30"
+                    strokeWidth="1.5"
+                    className="mr-2"
+                  />
+                </div>
+                <div className="col-span-9 text-left">
+                  <span className="">
+                    1428 EWS, 3rd STAGE, SANATERY CORE, next to Dr AGARWAL EYE
+                    HOSPITAL, Yelahanka New Town, Bengaluru, Karnataka 560064
+                  </span>
+                </div>
+              </div>
             </h5>
           </div>
 

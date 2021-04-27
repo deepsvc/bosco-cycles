@@ -28,9 +28,6 @@ function RegularService() {
           A Quick tune-up which covers all the basic checks to keep you on the
           move!
         </p>
-        <p className="font-bold">
-          Our Trusted technician will drop-In and service your bicycle.{" "}
-        </p>
         <div className="pt-5 font-semibold pl-5 italic">
           <p className="text-sm font-bold text-red-600">What all is done?</p>
           <span style={{ color: "red" }}>»</span> All bolts checked and torqued
@@ -73,15 +70,8 @@ function RegularService() {
           be an ideal time.
         </p>
         <p className="text-sm pb-2 text-left">
-          We pick up your bike, Service it and drop it back in mint condition.
-          Pickup and drop charges included.
-        </p>
-        <p className="text-sm pb-2 text-left">
           A Quick tune-up which covers all the basic checks to keep you on the
           move!
-        </p>
-        <p className="customPBold">
-          Our Trusted technician will drop-In and service your bicycle.{" "}
         </p>
         <div style={{ textAlign: "left", paddingLeft: "10px" }}>
           <p

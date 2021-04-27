@@ -7,6 +7,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import Navbar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 
+import { addDays } from "date-fns";
+
 class MainForm extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +17,8 @@ class MainForm extends Component {
       brandname: "",
       modelnumber: "",
       message: "",
-      addons: "",
+      addons: [],
+      addonsOther:"",
       geartype: "",
       newname: "",
       newAddress: "",
@@ -32,7 +35,6 @@ class MainForm extends Component {
         brandname: "Brand name must be more than 1 character!",
         modelnumber: "Model Number must be more than 1 character!",
         message: "",
-        addons: "Add ons must be selected!",
         geartype: "Gear type must be selected!",
       },
       errors1: {
@@ -44,7 +46,6 @@ class MainForm extends Component {
         newnumber: "Enter a valid phone number!",
         newmessage: "",
         startdate: "Enter a valid day and time to collect your cycle",
-        enddate: "Enter a valid day and time to return your cycle",
       },
     };
 
@@ -101,6 +102,7 @@ class MainForm extends Component {
           modelnumber: this.state.modelnumber,
           message: this.state.message,
           addons: this.state.addons,
+          addonsother:this.state.addonsOther,
           geartype: this.state.geartype,
           newname: this.state.newname,
           newAddress: this.state.newAddress,
@@ -132,6 +134,7 @@ class MainForm extends Component {
           modelnumber: "",
           message: "",
           addons: "",
+    addonsOther:"",
           geartype: "",
           newname: "",
           newAddress: "",
@@ -148,7 +151,6 @@ class MainForm extends Component {
             brandname: "Brand name must be more than 1 character!",
             modelnumber: "Model Number must be more than 1 character!",
             message: "",
-            addons: "Add ons must be selected!",
             geartype: "Gear type must be selected!",
           },
           errors1: {
@@ -160,7 +162,6 @@ class MainForm extends Component {
             newnumber: "Enter a valid phone number!",
             newmessage: "",
             startdate: "Enter a valid day and time to collect your cycle",
-            enddate: "Enter a valid day and time to return your cycle",
           },
         });
         alert("Form submitted successfully!");
@@ -176,6 +177,7 @@ class MainForm extends Component {
     let nam = event.target.name;
     let val = event.target.value;
     let errors = this.state.errors;
+
     console.log(nam, val);
     switch (nam) {
       case "brandname":
@@ -187,19 +189,23 @@ class MainForm extends Component {
           val.length <= 1 ? "Model Number must be more than 1 characters!" : "";
         break;
 
-      case "addons":
-        errors.addons = val.length < 5 ? "Add ons must be selected!" : "";
-        break;
       case "geartype":
         errors.geartype = val.length < 5 ? "Gear type must be selected!" : "";
         break;
       default:
         break;
     }
+    if(nam == "addons"){
+      //
+      this.setState((prevState)=>({ errors, [nam]: prevState[nam].includes(val) ? prevState[nam].filter(function(item) {
+        return item !== val
+    }) :[...prevState[nam],val] }));
+    }else{
     this.setState({ errors, [nam]: val }, () => {
       console.log(errors);
     });
   };
+}
 
   myChangeHandler2 = (event) => {
     let nam = event.target.name;
@@ -245,12 +251,8 @@ class MainForm extends Component {
             ? "Enter a valid day and time to collect your cycle"
             : "";
         break;
-      case "enddate":
-        errors.enddate =
-          val.length <= 0
-            ? "Enter a valid day and time to return your cycle"
-            : "";
-        break;
+      
+        
       default:
         break;
     }
@@ -362,34 +364,37 @@ class MainForm extends Component {
                     </span>
                     <div>
                       <input
-                        type="radio"
+                        type="checkbox"
+                        checked={ this.state.addons.includes("BRAKE CABLE SET: Rs. 250 ")}
                         value="BRAKE CABLE SET: Rs. 250 "
                         name="addons"
-                        placeholder="Brand"
                       />{" "}
                       BRAKE CABLE SET: Rs. 250 <br />
                       <input
-                        type="radio"
+                        type="checkbox"
+                        checked={ this.state.addons.includes("GEAR CABLE SET: Rs. 250 ")}
+
                         value="GEAR CABLE SET: Rs. 250 "
                         name="addons"
-                        placeholder="Brand"
                       />{" "}
                       GEAR CABLE SET: Rs. 250 <br />
                       <input
-                        type="radio"
+                        type="checkbox"
+                        checked={ this.state.addons.includes("PUNCHER: Rs. 55")}
+
                         value="PUNCHER: Rs. 55"
                         name="addons"
-                        placeholder="Brand"
                       />{" "}
                       PUNCHER: Rs. 55
                       <br />
                       <input
-                        type="radio"
-                        value="Other"
-                        name="addons"
-                        placeholder="Brand"
+                       className={textAreaCSS}
+                        type="text"
+                        value={this.state.addonsOther}
+                        name="addonsOther"
+                        placeholder="Others"
                       />{" "}
-                      Other <br />
+                       <br />
                     </div>
                   </div>
                   <div className="text-left w-4/6 md:w-full">
@@ -468,6 +473,8 @@ class MainForm extends Component {
                       placeholder="Pin Code"
                       onChange={this.myChangeHandler2}
                     />
+                    {this.props.form === "DoorStep Regular Service" ? null:
+                    (<React.Fragment>
                     <DatePicker
                       className={inputCSS2}
                       placeholderText="Collect Date"
@@ -477,7 +484,7 @@ class MainForm extends Component {
                           date.length <= 0
                             ? "Enter a valid day and time to collect your cycle"
                             : "";
-                        this.setState({ startdate: date });
+                        this.setState({ startdate: date,enddate:addDays(date, 2)});
                       }}
                       showTimeSelect
                       timeFormat="HH:mm"
@@ -491,21 +498,11 @@ class MainForm extends Component {
                       placeholderText="Return Date"
                       className={inputCSS2}
                       selected={this.state.enddate}
-                      onChange={(date) => {
-                        this.state.errors1.enddate =
-                          date.length <= 0
-                            ? "Enter a valid day and time to return your cycle"
-                            : "";
-                        this.setState({ enddate: date });
-                      }}
-                      showTimeSelect
-                      timeFormat="HH:mm"
-                      timeIntervals={45}
-                      timeCaption="time"
-                      minDate={this.state.startdate}
-                      showDisabledMonthNavigation
+                      maxDate={this.state.enddate}
+                      minDate={new Date()}
                       dateFormat="MMMM d, yyyy h:mm aa"
                     />
+                    </React.Fragment>)}
                     <h6 className="my-5 italic">
                       On submitting the form, our executive will call you to
                       discuss further details.
