@@ -128,7 +128,7 @@ class Contact extends Component {
 
   render() {
     const input_style =
-      "placeholder-gray-200 bg-transparent border-solid border-opacity-80 border-2 text-white border-gray-100 my-2 py-2 px-2 lg:w-3/4 w-11/12 rounded placeholder-opacity-50";
+      "placeholder-gray-200 bg-transparent border-solid border-opacity-80 border-2 text-white border-gray-100 my-2 py-2 px-2 lg:w-3/4 w-full rounded placeholder-opacity-50";
     return (
       <div
         className="flex lg:flex-row flex-col bg-gray-800 shadow-inner justify-center items-center"
@@ -147,7 +147,7 @@ class Contact extends Component {
               type="text"
               name="name"
               value={this.state.name}
-              placeholder="Your Name"
+              placeholder="Your Name*"
               onChange={(event) => this.handleChange(event, "name")}
             />
 
@@ -156,7 +156,7 @@ class Contact extends Component {
               type="text"
               name="phone"
               value={this.state.phone}
-              placeholder="Your Number"
+              placeholder="Your Number*"
               onChange={(event) => this.handleChange(event, "phone")}
             />
 
@@ -165,7 +165,7 @@ class Contact extends Component {
               type="text"
               name="email"
               value={this.state.email}
-              placeholder="Your Email"
+              placeholder="Your Email*"
               onChange={(event) => this.handleChange(event, "email")}
             />
 
@@ -174,7 +174,7 @@ class Contact extends Component {
               type="text"
               name="message"
               value={this.state.message}
-              placeholder="Message"
+              placeholder="Message*"
               onChange={(event) => this.handleChange(event, "message")}
             />
 

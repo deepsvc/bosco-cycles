@@ -45,7 +45,7 @@ class MainForm extends Component {
         newalternatenumber: "",
         newnumber: "Enter a valid phone number!",
         newmessage: "",
-        startdate: "Enter a valid day and time to collect your cycle",
+        startdate: this.props.form === "DoorStep Regular Service" ?  "": "Enter a valid day and time to collect your cycle",
       },
     };
 
@@ -161,7 +161,7 @@ class MainForm extends Component {
             newalternatenumber: "",
             newnumber: "Enter a valid phone number!",
             newmessage: "",
-            startdate: "Enter a valid day and time to collect your cycle",
+            startdate: this.props.form === "DoorStep Regular Service" ?  "": "Enter a valid day and time to collect your cycle",
           },
         });
         alert("Form submitted successfully!");
@@ -317,7 +317,7 @@ class MainForm extends Component {
                       }}
                       options={biketpyeoptions}
                       name="biketpye"
-                      placeholder="Select Bike Type"
+                      placeholder="Select Bike Type*"
                     />
 
                     <input
@@ -325,7 +325,7 @@ class MainForm extends Component {
                       type="text"
                       name="brandname"
                       value={this.state.brandname}
-                      placeholder="Brand"
+                      placeholder="Brand*"
                       onChange={this.myChangeHandler}
                     />
 
@@ -334,7 +334,7 @@ class MainForm extends Component {
                       type="text"
                       name="modelnumber"
                       value={this.state.modelnumber}
-                      placeholder="Model"
+                      placeholder="Model*"
                       onChange={this.myChangeHandler}
                     />
 
@@ -351,7 +351,7 @@ class MainForm extends Component {
                       }}
                       value={this.state.geartype}
                       name="geartype"
-                      placeholder="Gear or Non-Gear"
+                      placeholder="Gear or Non-Gear*"
                     />
                   </div>
 
@@ -430,7 +430,7 @@ class MainForm extends Component {
                       type="text"
                       name="newname"
                       value={this.state.newname}
-                      placeholder="Your Name"
+                      placeholder="Your Name*"
                       onChange={this.myChangeHandler2}
                     />
                     <input
@@ -438,7 +438,7 @@ class MainForm extends Component {
                       type="text"
                       name="newnumber"
                       value={this.state.newnumber}
-                      placeholder="Phone Number"
+                      placeholder="Phone Number*"
                       onChange={this.myChangeHandler2}
                     />
                     <input
@@ -454,7 +454,7 @@ class MainForm extends Component {
                       type="text"
                       name="newemail"
                       value={this.state.newemail}
-                      placeholder="Email"
+                      placeholder="Email*"
                       onChange={this.myChangeHandler2}
                     />
                     <input
@@ -462,7 +462,7 @@ class MainForm extends Component {
                       type="text"
                       name="newAddress"
                       value={this.state.newAddress}
-                      placeholder="Address"
+                      placeholder="Address*"
                       onChange={this.myChangeHandler2}
                     />
                     <input
@@ -470,14 +470,14 @@ class MainForm extends Component {
                       type="text"
                       name="newpincode"
                       value={this.state.newpincode}
-                      placeholder="Pin Code"
+                      placeholder="Pin Code*"
                       onChange={this.myChangeHandler2}
                     />
                     {this.props.form === "DoorStep Regular Service" ? null:
                     (<React.Fragment>
                     <DatePicker
                       className={inputCSS2}
-                      placeholderText="Collect Date"
+                      placeholderText="Collect Date*"
                       selected={this.state.startdate}
                       onChange={(date) => {
                         this.state.errors1.startdate =
@@ -520,12 +520,16 @@ class MainForm extends Component {
                         onClick={this.handleSubmit}
                         value={"Submit Enquiry"}
                       />
-                      <input
-                        className="hover:bg-black transition duration-500 ease-in-out transform md:hover:scale-105 hover:shadow-xl transform my-2 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
+                      {/* <input
+                      disabled
+                        className="hover:bg-black transition disabled:opacity-50 duration-500 ease-in-out transform md:hover:scale-105 hover:shadow-xl transform my-2 py-2 px-12 font-semibold uppercase bg-red-600 rounded text-white text-xl"
                         type="submit"
-                        onClick={this.handleNext.bind(this)}
+                        // onClick={this.handleNext.bind(this)}
                         value={"Make Payment"}
-                      />
+                      /> */}
+                      <button disabled className="disabled:opacity-50 my-2 py-2 px-12 font-semibold uppercase bg-red-300 rounded text-white text-xl">
+                      Make Payment
+                      </button>
                     </div>
                   </div>
                 </>

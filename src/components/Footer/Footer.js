@@ -84,7 +84,7 @@ class Footer extends Component {
             </div>
             <div className="mr-6 transition duration-500 ease-in-out transform md:hover:scale-110 text-white hover:shadow-xl">
               <a
-                href="https://api.whatsapp.com/send?phone=9964288130"
+                href="https://api.whatsapp.com/send?phone=+919964288130"
                 target="_blank"
               >
                 <SocialLogo

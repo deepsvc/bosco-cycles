@@ -165,7 +165,7 @@ class SimpleForm extends Component {
                 type="text"
                 name="name"
                 value={this.state.name}
-                placeholder="Your Name"
+                placeholder="Your Name*"
                 onChange={(event) => this.handleChange(event, "name")}
               />
               <input
@@ -173,7 +173,7 @@ class SimpleForm extends Component {
                 type="text"
                 name="phone"
                 value={this.state.phone}
-                placeholder="Your Number"
+                placeholder="Your Number*"
                 onChange={(event) => this.handleChange(event, "phone")}
               />
               <input
@@ -181,7 +181,7 @@ class SimpleForm extends Component {
                 type="text"
                 name="email"
                 value={this.state.email}
-                placeholder="Your Email"
+                placeholder="Your Email*"
                 onChange={(event) => this.handleChange(event, "email")}
               />
               <textarea
