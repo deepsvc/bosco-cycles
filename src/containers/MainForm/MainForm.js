@@ -18,7 +18,7 @@ class MainForm extends Component {
       modelnumber: "",
       message: "",
       addons: [],
-      addonsOther:"",
+      addonsOther: "",
       geartype: "",
       newname: "",
       newAddress: "",
@@ -45,7 +45,10 @@ class MainForm extends Component {
         newalternatenumber: "",
         newnumber: "Enter a valid phone number!",
         newmessage: "",
-        startdate: this.props.form === "DoorStep Regular Service" ?  "": "Enter a valid day and time to collect your cycle",
+        startdate:
+          this.props.form === "DoorStep Regular Service"
+            ? ""
+            : "Enter a valid day and time to collect your cycle",
       },
     };
 
@@ -102,7 +105,7 @@ class MainForm extends Component {
           modelnumber: this.state.modelnumber,
           message: this.state.message,
           addons: this.state.addons,
-          addonsother:this.state.addonsOther,
+          addonsother: this.state.addonsOther,
           geartype: this.state.geartype,
           newname: this.state.newname,
           newAddress: this.state.newAddress,
@@ -134,7 +137,7 @@ class MainForm extends Component {
           modelnumber: "",
           message: "",
           addons: "",
-    addonsOther:"",
+          addonsOther: "",
           geartype: "",
           newname: "",
           newAddress: "",
@@ -161,7 +164,10 @@ class MainForm extends Component {
             newalternatenumber: "",
             newnumber: "Enter a valid phone number!",
             newmessage: "",
-            startdate: this.props.form === "DoorStep Regular Service" ?  "": "Enter a valid day and time to collect your cycle",
+            startdate:
+              this.props.form === "DoorStep Regular Service"
+                ? ""
+                : "Enter a valid day and time to collect your cycle",
           },
         });
         alert("Form submitted successfully!");
@@ -195,17 +201,22 @@ class MainForm extends Component {
       default:
         break;
     }
-    if(nam == "addons"){
+    if (nam === "addons") {
       //
-      this.setState((prevState)=>({ errors, [nam]: prevState[nam].includes(val) ? prevState[nam].filter(function(item) {
-        return item !== val
-    }) :[...prevState[nam],val] }));
-    }else{
-    this.setState({ errors, [nam]: val }, () => {
-      console.log(errors);
-    });
+      this.setState((prevState) => ({
+        errors,
+        [nam]: prevState[nam].includes(val)
+          ? prevState[nam].filter(function (item) {
+              return item !== val;
+            })
+          : [...prevState[nam], val],
+      }));
+    } else {
+      this.setState({ errors, [nam]: val }, () => {
+        console.log(errors);
+      });
+    }
   };
-}
 
   myChangeHandler2 = (event) => {
     let nam = event.target.name;
@@ -251,8 +262,7 @@ class MainForm extends Component {
             ? "Enter a valid day and time to collect your cycle"
             : "";
         break;
-      
-        
+
       default:
         break;
     }
@@ -365,36 +375,38 @@ class MainForm extends Component {
                     <div>
                       <input
                         type="checkbox"
-                        checked={ this.state.addons.includes("BRAKE CABLE SET: Rs. 250 ")}
+                        checked={this.state.addons.includes(
+                          "BRAKE CABLE SET: Rs. 250 "
+                        )}
                         value="BRAKE CABLE SET: Rs. 250 "
                         name="addons"
                       />{" "}
                       BRAKE CABLE SET: Rs. 250 <br />
                       <input
                         type="checkbox"
-                        checked={ this.state.addons.includes("GEAR CABLE SET: Rs. 250 ")}
-
+                        checked={this.state.addons.includes(
+                          "GEAR CABLE SET: Rs. 250 "
+                        )}
                         value="GEAR CABLE SET: Rs. 250 "
                         name="addons"
                       />{" "}
                       GEAR CABLE SET: Rs. 250 <br />
                       <input
                         type="checkbox"
-                        checked={ this.state.addons.includes("PUNCHER: Rs. 55")}
-
+                        checked={this.state.addons.includes("PUNCHER: Rs. 55")}
                         value="PUNCHER: Rs. 55"
                         name="addons"
                       />{" "}
                       PUNCHER: Rs. 55
                       <br />
                       <input
-                       className={textAreaCSS}
+                        className={textAreaCSS}
                         type="text"
                         value={this.state.addonsOther}
                         name="addonsOther"
                         placeholder="Others"
                       />{" "}
-                       <br />
+                      <br />
                     </div>
                   </div>
                   <div className="text-left w-4/6 md:w-full">
@@ -473,36 +485,40 @@ class MainForm extends Component {
                       placeholder="Pin Code*"
                       onChange={this.myChangeHandler2}
                     />
-                    {this.props.form === "DoorStep Regular Service" ? null:
-                    (<React.Fragment>
-                    <DatePicker
-                      className={inputCSS2}
-                      placeholderText="Collect Date*"
-                      selected={this.state.startdate}
-                      onChange={(date) => {
-                        this.state.errors1.startdate =
-                          date.length <= 0
-                            ? "Enter a valid day and time to collect your cycle"
-                            : "";
-                        this.setState({ startdate: date,enddate:addDays(date, 2)});
-                      }}
-                      showTimeSelect
-                      timeFormat="HH:mm"
-                      timeIntervals={45}
-                      timeCaption="time"
-                      minDate={new Date()}
-                      showDisabledMonthNavigation
-                      dateFormat="MMMM d, yyyy h:mm aa"
-                    />
-                    <DatePicker
-                      placeholderText="Return Date"
-                      className={inputCSS2}
-                      selected={this.state.enddate}
-                      maxDate={this.state.enddate}
-                      minDate={new Date()}
-                      dateFormat="MMMM d, yyyy h:mm aa"
-                    />
-                    </React.Fragment>)}
+                    {this.props.form === "DoorStep Regular Service" ? null : (
+                      <React.Fragment>
+                        <DatePicker
+                          className={inputCSS2}
+                          placeholderText="Collect Date*"
+                          selected={this.state.startdate}
+                          onChange={(date) => {
+                            this.state.errors1.startdate =
+                              date.length <= 0
+                                ? "Enter a valid day and time to collect your cycle"
+                                : "";
+                            this.setState({
+                              startdate: date,
+                              enddate: addDays(date, 2),
+                            });
+                          }}
+                          showTimeSelect
+                          timeFormat="HH:mm"
+                          timeIntervals={45}
+                          timeCaption="time"
+                          minDate={new Date()}
+                          showDisabledMonthNavigation
+                          dateFormat="MMMM d, yyyy h:mm aa"
+                        />
+                        <DatePicker
+                          placeholderText="Return Date"
+                          className={inputCSS2}
+                          selected={this.state.enddate}
+                          maxDate={this.state.enddate}
+                          minDate={new Date()}
+                          dateFormat="MMMM d, yyyy h:mm aa"
+                        />
+                      </React.Fragment>
+                    )}
                     <h6 className="my-5 italic">
                       On submitting the form, our executive will call you to
                       discuss further details.
@@ -527,8 +543,11 @@ class MainForm extends Component {
                         // onClick={this.handleNext.bind(this)}
                         value={"Make Payment"}
                       /> */}
-                      <button disabled className="disabled:opacity-50 my-2 py-2 px-12 font-semibold uppercase bg-red-300 rounded text-white text-xl">
-                      Make Payment
+                      <button
+                        disabled
+                        className="disabled:opacity-50 my-2 py-2 px-12 font-semibold uppercase bg-red-300 rounded text-white text-xl"
+                      >
+                        Make Payment
                       </button>
                     </div>
                   </div>

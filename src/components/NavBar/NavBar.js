@@ -73,16 +73,6 @@ class NavBar extends Component {
       maxHeight: "500px",
     };
 
-    var DoorStepMob = {
-      minWidth: "350px",
-      maxWidth: "350px",
-      left: "5%",
-      marginLeft: "0%",
-      width: "50%",
-      top: "5%",
-      marginTop: "0%",
-    };
-
     return (
       <div className="flex">
         <nav className="flex-grow w-full bg-gray-200 opc h-auto shadow-md fixed Graphik-Regular-Web z-10">
